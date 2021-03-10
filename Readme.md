@@ -10,4 +10,5 @@ Leecode 刷题
 
 # 8.字符串转换整数(atoi)
 [地址](https://leetcode-cn.com/problems/string-to-integer-atoi/)
-[讲解]()
+
+[讲解](./leecode/leecode8.md)
