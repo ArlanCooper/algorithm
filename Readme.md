@@ -16,3 +16,8 @@ Leecode 刷题
 # 13.罗马数字转整数
 [地址](https://leetcode-cn.com/problems/roman-to-integer/)
 
+
+# 1689.十-二进制数的最少数目
+[地址](https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/)
+
+[讲解](./leecode/leecode8.md)
