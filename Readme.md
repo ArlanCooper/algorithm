@@ -20,4 +20,20 @@ Leecode 刷题
 # 1689.十-二进制数的最少数目
 [地址](https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/)
 
-[讲解](./leecode/leecode8.md)
+[讲解](./leecode/leecode1689.md)
+
+
+# 1480. 一维数组的动态和
+[地址](https://leetcode-cn.com/problems/running-sum-of-1d-array/)
+
+[讲解](./leecode/leecode1480.md)
+
+# 81. 搜索旋转排序数组 II
+[地址](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)
+
+[讲解](./leecode/leecode81.md)
+
+# 153. 寻找旋转排序数组中的最小值
+[地址](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+
+[讲解](./leecode/leecode153.md)
