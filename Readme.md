@@ -37,3 +37,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
 
 [讲解](./leecode/leecode153.md)
+
+
+# 179. 最大数
+[地址](https://leetcode-cn.com/problems/largest-number/)
+
+[讲解](./leecode/leecode179.md)
