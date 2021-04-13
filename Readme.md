@@ -43,3 +43,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/largest-number/)
 
 [讲解](./leecode/leecode179.md)
+
+
+# 783. 二叉搜索树节点最小距离
+[地址](https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/)
+
+[讲解](./leecode/leecode783.md)
