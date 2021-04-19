@@ -60,3 +60,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/house-robber-ii/)
 
 [讲解](./leecode/leecode213.md)
+
+
+# 27. 移除元素
+[地址](https://leetcode-cn.com/problems/remove-element/)
+
+[讲解](./leecode/leecode27.md)
