@@ -66,3 +66,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/remove-element/)
 
 [讲解](./leecode/leecode27.md)
+
+# 28. 实现 strStr()
+[地址](https://leetcode-cn.com/problems/implement-strstr/)
+
+[讲解](./leecode/leecode28.md)
