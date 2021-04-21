@@ -71,3 +71,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/implement-strstr/)
 
 [讲解](./leecode/leecode28.md)
+
+
+# 91. 解码方法
+[地址](https://leetcode-cn.com/problems/decode-ways/)
+
+[讲解](./leecode/leecode91.md)
+
