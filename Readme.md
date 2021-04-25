@@ -83,3 +83,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/largest-divisible-subset/)
 
 [讲解](./leecode/leecode368.md)
+
+
+# 897. 递增顺序搜索树
+[地址](https://leetcode-cn.com/problems/increasing-order-search-tree/)
+
+
+[讲解](./leecode/leecode897.md)
