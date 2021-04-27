@@ -97,3 +97,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/)
 
 [讲解](./leecode/leecode1011.md)
+
+
+# 938. 二叉搜索树的范围和
+[地址](https://leetcode-cn.com/problems/range-sum-of-bst/)
+
+[讲解](./leecode/leecode938.md)
