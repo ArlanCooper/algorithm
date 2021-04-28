@@ -103,3 +103,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/range-sum-of-bst/)
 
 [讲解](./leecode/leecode938.md)
+
+
+# 633. 平方数之和
+[地址](https://leetcode-cn.com/problems/sum-of-square-numbers/)
+
+
+[讲解](./leecode/leecode633.md)
