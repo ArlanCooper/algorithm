@@ -123,3 +123,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/maximum-subarray/)
 
 [讲解](./leecode/leecode53.md)
+
+
+# 149. 直线上最多的点数
+[地址](https://leetcode-cn.com/problems/max-points-on-a-line/)
+
+[讲解](./leecode/leecode149.md)
