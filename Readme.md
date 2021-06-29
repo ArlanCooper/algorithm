@@ -129,3 +129,14 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/max-points-on-a-line/)
 
 [讲解](./leecode/leecode149.md)
+
+
+# 数组乘积问题
+
+[讲解](./mytest/getproduct.md)
+
+
+# 168. Excel表列名称
+[地址](https://leetcode-cn.com/problems/excel-sheet-column-title/solution/python-26jin-zhi-by-qubenhao-4zxv/)
+
+[讲解](./leecode/leecode168.md)
