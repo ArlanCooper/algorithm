@@ -140,3 +140,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/excel-sheet-column-title/solution/python-26jin-zhi-by-qubenhao-4zxv/)
 
 [讲解](./leecode/leecode168.md)
+
+
+# LCP 07. 传递信息
+[地址](https://leetcode-cn.com/problems/chuan-di-xin-xi/)
+
+
+[讲解](./leecode/leecode07.md)
