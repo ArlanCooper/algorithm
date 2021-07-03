@@ -147,3 +147,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode07.md)
+
+
+# 1833. 雪糕的最大数量
+[地址](https://leetcode-cn.com/problems/maximum-ice-cream-bars/)
+
+[讲解](./leecode/leecode1833.md)
