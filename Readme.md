@@ -153,3 +153,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/maximum-ice-cream-bars/)
 
 [讲解](./leecode/leecode1833.md)
+
+# 1418. 点菜展示表
+[地址](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/)
+
+[讲解](./leecode/leecode1418.md)
