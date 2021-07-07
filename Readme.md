@@ -158,3 +158,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/)
 
 [讲解](./leecode/leecode1418.md)
+
+
+# 1711. 大餐计数
+[地址](https://leetcode-cn.com/problems/count-good-meals/)
+
+[讲解](./leecode/leecode1711.md)
