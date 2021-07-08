@@ -164,3 +164,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/count-good-meals/)
 
 [讲解](./leecode/leecode1711.md)
+
+
+# 930. 和相同的二元子数组
+[地址](https://leetcode-cn.com/problems/binary-subarrays-with-sum/)
+
+[讲解](./leecode/leecode930.md)

@@ -66,7 +66,8 @@ class Solution:
         for d in deliciousness:
             for i in range(22):
                 if (1<<i)-d in counter:
-                    ans += counter[(1<<i)-d] % mod
+                    # 如果2**i减d在数组里面，则添加该数在数组里面的个数
+                    ans = (ans+counter[(1<<i)-d] )% mod
             counter[d] += 1
         return ans
 ```
