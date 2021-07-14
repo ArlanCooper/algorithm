@@ -170,3 +170,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/binary-subarrays-with-sum/)
 
 [讲解](./leecode/leecode930.md)
+
+
+
+# 1818. 绝对差值和
+[地址](https://leetcode-cn.com/problems/minimum-absolute-sum-difference/)
+
+[讲解](./leecode1818.md)
