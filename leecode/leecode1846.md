@@ -71,6 +71,10 @@ class Solution:
 # 参考解法
 ```python
 class Solution:
+    '''
+    非常巧妙
+    
+    '''
     def maximumElementAfterDecrementingAndRearranging(self, arr: List[int]) -> int:
         arr.sort()
         res = 0
