@@ -105,7 +105,7 @@ class Solution:
 
     def fun(self, sortedlist, target):
         '''
-        二分法查找与target最相近的数字
+        二分法查找与target最相近的数字 
         '''
         l = 0
         r = len(sortedlist)

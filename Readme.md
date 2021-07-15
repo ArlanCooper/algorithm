@@ -177,3 +177,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/minimum-absolute-sum-difference/)
 
 [讲解](./leecode1818.md)
+
+
+# 1846. 减小和重新排列数组后的最大元素
+[地址](https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/)
+
+[讲解](./leecode1846.md)
