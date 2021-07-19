@@ -189,3 +189,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)
 
 [讲解](./leecode/leecode53.md)
+
+
+
+# 1838. 最高频元素的频数
+[地址](https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/)
+
+[讲解](./leecode/leecode1838.md)
