@@ -196,3 +196,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/)
 
 [讲解](./leecode/leecode1838.md)
+
+
+# 1877. 数组中最大数对和的最小值
+[地址](https://leetcode-cn.com/problems/minimize-maximum-pair-sum-in-array/)
+
+[讲解](./leecode/leecode1877.md)
