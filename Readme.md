@@ -202,3 +202,11 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/minimize-maximum-pair-sum-in-array/)
 
 [讲解](./leecode/leecode1877.md)
+
+
+
+# 剑指 Offer 52. 两个链表的第一个公共节点
+[地址](https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/)
+
+
+[讲解](./leecode/leecode_52.md)
