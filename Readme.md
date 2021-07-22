@@ -210,3 +210,10 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode_52.md)
+
+
+
+# 138. 复制带随机指针的链表
+[地址](https://leetcode-cn.com/problems/copy-list-with-random-pointer/)
+
+[讲解](./leecode/leecode138/md)
