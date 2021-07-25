@@ -217,3 +217,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/copy-list-with-random-pointer/)
 
 [讲解](./leecode/leecode138/md)
+
+# 1743. 从相邻元素对还原数组
+[地址](https://leetcode-cn.com/problems/restore-the-array-from-adjacent-pairs/)
+
+[讲解](./leecode/leecode1743.md)
+
