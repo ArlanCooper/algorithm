@@ -223,3 +223,8 @@ Leecode 刷题
 
 [讲解](./leecode/leecode1743.md)
 
+
+# 1713. 得到子序列的最少操作次数
+[地址](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/)
+
+[讲解](./leecode/leecode1713.md)
