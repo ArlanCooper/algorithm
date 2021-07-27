@@ -224,7 +224,14 @@ Leecode 刷题
 [讲解](./leecode/leecode1743.md)
 
 
+<<<<<<< HEAD
 # 1713. 得到子序列的最少操作次数
 [地址](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/)
 
 [讲解](./leecode/leecode1713.md)
+=======
+# 671. 二叉树中第二小的节点
+[地址](https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/)
+
+[讲解](./leecode/leecode671.md)
+>>>>>>> 81ca9a7d7d267c64fed7d4c2f86b0b689a5dfba9
