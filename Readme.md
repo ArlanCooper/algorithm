@@ -223,3 +223,8 @@ Leecode 刷题
 
 [讲解](./leecode/leecode1743.md)
 
+
+# 671. 二叉树中第二小的节点
+[地址](https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/)
+
+[讲解](./leecode/leecode671.md)
