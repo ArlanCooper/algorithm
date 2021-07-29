@@ -236,3 +236,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/)
 
 [讲解](./leecode/leecode863.md)
+
+
+# 1104. 二叉树寻路
+[地址](https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/)
+
+[讲解](./leecode/leecode1104.md)
