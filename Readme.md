@@ -242,3 +242,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/)
 
 [讲解](./leecode/leecode1104.md)
+
+
+# 171. Excel表列序号
+[地址](https://leetcode-cn.com/problems/excel-sheet-column-number/)
+
+[讲解](./leecode/leecode171.md)
