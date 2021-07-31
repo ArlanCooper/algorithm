@@ -248,3 +248,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/excel-sheet-column-number/)
 
 [讲解](./leecode/leecode171.md)
+
+
+# 987. 二叉树的垂序遍历
+[地址](https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/)
+
+[讲解](./leecode/leecode987.md)
