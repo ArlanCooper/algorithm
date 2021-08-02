@@ -250,8 +250,21 @@ Leecode 刷题
 [讲解](./leecode/leecode171.md)
 
 
+<<<<<<< HEAD
 # 743. 网络延迟时间
 [地址](https://leetcode-cn.com/problems/network-delay-time/)
 
 
 [讲解](./leecode/leecode743.md)
+=======
+# 987. 二叉树的垂序遍历
+[地址](https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/)
+
+[讲解](./leecode/leecode987.md)
+
+
+# 1337. 矩阵中战斗力最弱的 K 行
+[地址](https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix/)
+
+[讲解](./leecode/leecode1337.md)
+>>>>>>> 26ca482a091dc4b3e24ed6ed462284294a2739b1
