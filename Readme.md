@@ -268,3 +268,9 @@ Leecode 刷题
 
 [讲解](./leecode/leecode1337.md)
 >>>>>>> 26ca482a091dc4b3e24ed6ed462284294a2739b1
+
+
+# 581. 最短无序连续子数组
+[地址](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/)
+
+[讲解](./leecode/leecode581.md)
