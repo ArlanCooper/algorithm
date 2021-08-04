@@ -274,3 +274,11 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/)
 
 [讲解](./leecode/leecode581.md)
+
+
+
+# 611. 有效三角形的个数
+[地址](https://leetcode-cn.com/problems/valid-triangle-number/)
+
+[讲解](./leecode/leecode611.md)
+
