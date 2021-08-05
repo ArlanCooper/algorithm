@@ -282,3 +282,9 @@ Leecode 刷题
 
 [讲解](./leecode/leecode611.md)
 
+
+
+# 802. 找到最终的安全状态
+[地址](https://leetcode-cn.com/problems/find-eventual-safe-states/)
+
+[讲解](./leecode/leecode802.md)
