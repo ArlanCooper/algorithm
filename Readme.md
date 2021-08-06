@@ -288,3 +288,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/find-eventual-safe-states/)
 
 [讲解](./leecode/leecode802.md)
+
+
+# 847. 访问所有节点的最短路径
+[地址](https://leetcode-cn.com/problems/shortest-path-visiting-all-nodes/)
+
+[讲解](./leecode/leecode847.md)
