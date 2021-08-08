@@ -302,3 +302,10 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode467.md)
+
+
+# 1137. 第 N 个泰波那契数
+[地址](https://leetcode-cn.com/problems/n-th-tribonacci-number/)
+
+
+[讲解](./leecode/leecode1137.md)
