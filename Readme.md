@@ -309,3 +309,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode1137.md)
+
+
+# 313. 超级丑数
+[地址](https://leetcode-cn.com/problems/super-ugly-number/)
+
+[讲解](./leecode/leecode313.md)
