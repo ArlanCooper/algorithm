@@ -315,3 +315,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/super-ugly-number/)
 
 [讲解](./leecode/leecode313.md)
+
+# 413. 等差数列划分
+[地址](https://leetcode-cn.com/problems/arithmetic-slices/)
+
+[讲解](./leecode/leecode413.md)
