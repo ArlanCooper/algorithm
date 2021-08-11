@@ -320,3 +320,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/arithmetic-slices/)
 
 [讲解](./leecode/leecode413.md)
+
+
+# 446. 等差数列划分 II - 子序列
+[地址](https://leetcode-cn.com/problems/arithmetic-slices-ii-subsequence/)
+
+[讲解](./leecode/leecode446.md)
