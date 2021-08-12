@@ -326,3 +326,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/arithmetic-slices-ii-subsequence/)
 
 [讲解](./leecode/leecode446.md)
+
+# 516. 最长回文子序列
+[地址](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
+
+
+[讲解](./leecode/leecode516.md)
