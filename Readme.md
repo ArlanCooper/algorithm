@@ -332,3 +332,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode516.md)
+
+
+# 233 数字1的个数
+[地址](https://leetcode-cn.com/problems/number-of-digit-one/)
+
+[讲解](./leecode/leecode_233.md)
