@@ -338,3 +338,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/number-of-digit-one/)
 
 [讲解](./leecode/leecode_233.md)
+
+
+# 1583. 统计不开心的朋友
+[地址](https://leetcode-cn.com/problems/count-unhappy-friends/)
+
+[讲解](./leecode/leecode1583.md)
