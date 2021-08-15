@@ -344,3 +344,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/count-unhappy-friends/)
 
 [讲解](./leecode/leecode1583.md)
+
+
+# 576. 出界的路径数
+[地址](https://leetcode-cn.com/problems/out-of-boundary-paths/)
+
+[讲解](./leecode/leecode576.md)
