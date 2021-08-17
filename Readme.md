@@ -351,7 +351,10 @@ Leecode 刷题
 
 [讲解](./leecode/leecode576.md)
 
+# 526. 优美的排列
+[地址](https://leetcode-cn.com/problems/beautiful-arrangement/)
 
+[讲解](./leecode/leecode526.md)
 
 # 551. 学生出勤记录 I
 [地址](https://leetcode-cn.com/problems/student-attendance-record-i/)
