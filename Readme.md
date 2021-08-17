@@ -350,3 +350,11 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/out-of-boundary-paths/)
 
 [讲解](./leecode/leecode576.md)
+
+
+
+# 551. 学生出勤记录 I
+[地址](https://leetcode-cn.com/problems/student-attendance-record-i/)
+
+
+[讲解](./leecode/leecode551.md)
