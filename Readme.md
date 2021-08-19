@@ -363,6 +363,11 @@ Leecode 刷题
 [讲解](./leecode/leecode551.md)
 
 
+# 
+[地址](https://leetcode-cn.com/problems/student-attendance-record-ii/)
+
+[讲解](./leecode/leecode552.md)
+
 # 345. 反转字符串中的元音字母
 [地址](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/)
 
