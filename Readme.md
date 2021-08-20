@@ -363,7 +363,7 @@ Leecode 刷题
 [讲解](./leecode/leecode551.md)
 
 
-# 
+# 552. 学生出勤记录 II
 [地址](https://leetcode-cn.com/problems/student-attendance-record-ii/)
 
 [讲解](./leecode/leecode552.md)
@@ -372,3 +372,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/)
 
 [讲解](./leecode/leecode345.md)
+
+# 541. 反转字符串 II
+[地址](https://leetcode-cn.com/problems/reverse-string-ii/)
+
+[讲解](./leecode/leecode541.md)
