@@ -383,3 +383,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/string-compression/)
 
 [讲解](./leecode/leecode443.md)
+
+
+# 789. 逃脱阻碍者
+[地址](https://leetcode-cn.com/problems/escape-the-ghosts/)
+
+[讲解](./leecode/leecode789.md)
