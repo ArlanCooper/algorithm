@@ -389,3 +389,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/escape-the-ghosts/)
 
 [讲解](./leecode/leecode789.md)
+
+
+# 1646. 获取生成数组中的最大值
+[地址](https://leetcode-cn.com/problems/get-maximum-in-generated-array/)
+
+[讲解](./leecode/leecode1646.md)
