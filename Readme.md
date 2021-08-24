@@ -395,3 +395,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/get-maximum-in-generated-array/)
 
 [讲解](./leecode/leecode1646.md)
+
+# 787. K 站中转内最便宜的航班
+[地址](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/)
+
+[讲解](./leecode/leecode787.md)
