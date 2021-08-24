@@ -41,7 +41,7 @@ src != dst
 ## 思路，动态规划
 我们用 f[t][i]表示通过恰好 tt 次航班，从出发城市 src 到达城市 i 需要的最小花费。在进行状态转移时，我们可以枚举最后一次航班的起点 j，即：
 
-$f[t][i]= \underset{(j,i)∈flights }{min}$​​​​​{f\[t−1\]\[j\]+cost(j,i)}
+$f[t][i]= \underset{(j,i)∈flights }{min}$​​​​​{f[t−1][j]+cost(j,i)}
 
 ```python
 class Solution:
