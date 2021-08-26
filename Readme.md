@@ -400,3 +400,15 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/)
 
 [讲解](./leecode/leecode787.md)
+
+
+# 797. 所有可能的路径
+[地址](https://leetcode-cn.com/problems/all-paths-from-source-to-target/)
+
+
+[讲解](./leecode/leecode797.md)
+
+# 881. 救生艇
+[地址](https://leetcode-cn.com/problems/boats-to-save-people/)
+
+[讲解](./leecode/leecode881.md)
