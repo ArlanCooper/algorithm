@@ -412,3 +412,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/boats-to-save-people/)
 
 [讲解](./leecode/leecode881.md)
+
+
+# 295. 数据流的中位数
+[地址](https://leetcode-cn.com/problems/find-median-from-data-stream/)
+
+[讲解](./leecode/leecode295.md)
+日拱一卒，不断进步。
