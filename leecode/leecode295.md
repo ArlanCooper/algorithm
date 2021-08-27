@@ -90,6 +90,7 @@ class MedianFinder:
 
 
     def addNum(self, num: int) -> None:
+    #python的heapq默认实现小顶堆的操作，要实现大顶堆，需要将元素取负。
         if len(self.A) != len(self.B):
             heappush(self.B, -heappushpop(self.A, num))
         else:
