@@ -419,3 +419,9 @@ Leecode 刷题
 
 [讲解](./leecode/leecode295.md)
 日拱一卒，不断进步。
+
+
+# 1480. 一维数组的动态和
+[地址](https://leetcode-cn.com/problems/running-sum-of-1d-array/)
+
+[讲解](./leecode/leecode1480.md)
