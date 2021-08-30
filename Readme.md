@@ -431,3 +431,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/)
 
 [讲解](./leecode/leecode1588.md)
+
+
+# 528. 按权重随机选择
+[地址](https://leetcode-cn.com/problems/random-pick-with-weight/)
+
+[讲解](./leecode/leecode528.md)
