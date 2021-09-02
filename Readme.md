@@ -448,3 +448,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/compare-version-numbers/)
 
 [讲解](./leecode165.md)
+
+
+# 剑指 Offer 22. 链表中倒数第k个节点
+[地址](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)
+
+[讲解](./leecode/leecode_offer22.md)
