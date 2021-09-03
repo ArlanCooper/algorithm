@@ -454,3 +454,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)
 
 [讲解](./leecode/leecode_offer22.md)
+
+
+# 面试题 17.14. 最小K个数
+[地址](https://leetcode-cn.com/problems/smallest-k-lcci/)
+
+[讲解](./leecode/leecode17.14.md)
