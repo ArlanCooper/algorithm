@@ -460,3 +460,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/smallest-k-lcci/)
 
 [讲解](./leecode/leecode17.14.md)
+
+
+# 剑指 Offer 10- I. 斐波那契数列
+[地址](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/)
+
+[讲解](./leecode/leecode_offer10_1.md)
