@@ -466,3 +466,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/)
 
 [讲解](./leecode/leecode_offer10_1.md)
+
+
+# 470. 用 Rand7() 实现 Rand10()
+[地址](https://leetcode-cn.com/problems/implement-rand10-using-rand7/)
+
+[讲解](./leecode/leecode470.md)
