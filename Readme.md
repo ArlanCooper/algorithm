@@ -472,3 +472,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/implement-rand10-using-rand7/)
 
 [讲解](./leecode/leecode470.md)
+
+
+# 704. 二分查找
+[地址](https://leetcode-cn.com/problems/binary-search/)
+
+[讲解](./leecode/leecode704.md)
