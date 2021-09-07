@@ -478,3 +478,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/binary-search/)
 
 [讲解](./leecode/leecode704.md)
+
+
+# 1221. 分割平衡字符串
+[地址](https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/)
+
+[讲解](./leecode/leecode1221.md)
