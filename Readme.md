@@ -484,3 +484,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/)
 
 [讲解](./leecode/leecode1221.md)
+
+# 502. IPO
+[地址](https://leetcode-cn.com/problems/ipo/)
+
+[讲解](./leecode/leecode502.md)
