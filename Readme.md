@@ -495,3 +495,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/text-justification/)
 
 [讲解](./leecode/leecode68.md)
+
+
+# 1894. 找到需要补充粉笔的学生编号
+[地址](https://leetcode-cn.com/problems/find-the-student-that-will-replace-the-chalk/)
+
+[讲解](./leecode/leecode1894.md)
