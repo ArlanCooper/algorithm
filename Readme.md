@@ -501,3 +501,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/find-the-student-that-will-replace-the-chalk/)
 
 [讲解](./leecode/leecode1894.md)
+
+# 600. 不含连续1的非负整数
+[地址](https://leetcode-cn.com/problems/non-negative-integers-without-consecutive-ones/)
+
+[讲解](./leecode/leecode600.md)
