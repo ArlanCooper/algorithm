@@ -506,3 +506,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/non-negative-integers-without-consecutive-ones/)
 
 [讲解](./leecode/leecode600.md)
+
+
+
+# 678. 有效的括号字符串
+[地址](https://leetcode-cn.com/problems/valid-parenthesis-string/)
+
+[讲解](./leecode/leecode678.md)
