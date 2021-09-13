@@ -513,3 +513,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/valid-parenthesis-string/)
 
 [讲解](./leecode/leecode678.md)
+
+
+# 447. 回旋镖的数量
+[地址](https://leetcode-cn.com/problems/number-of-boomerangs/)
+
+[讲解](./leecode/leecode447.md)
