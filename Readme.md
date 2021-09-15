@@ -525,3 +525,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/)
 
 [讲解](./leecode/leecode524.md)
+
+
+# 162. 寻找峰值
+[地址](https://leetcode-cn.com/problems/find-peak-element/)
+
+[讲解](./leecode/leecode162.md)
