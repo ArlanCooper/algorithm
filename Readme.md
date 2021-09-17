@@ -537,3 +537,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/word-search-ii/)
 
 [讲解](./leecode/leecode212.md)
+
+
+# 36. 有效的数独
+[地址](https://leetcode-cn.com/problems/valid-sudoku/)
+
+[讲解](./leecode/leecode36.md)
