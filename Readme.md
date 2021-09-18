@@ -543,3 +543,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/valid-sudoku/)
 
 [讲解](./leecode/leecode36.md)
+
+
+# 292. Nim 游戏
+[地址](https://leetcode-cn.com/problems/nim-game/)
+
+[讲解](./leecode/leecode292.md)
