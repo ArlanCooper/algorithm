@@ -549,3 +549,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/nim-game/)
 
 [讲解](./leecode/leecode292.md)
+
+
+# 650. 只有两个键的键盘
+[地址](https://leetcode-cn.com/problems/2-keys-keyboard/)
+
+[讲解](./leecode/leecode650.md)
