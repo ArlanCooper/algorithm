@@ -555,3 +555,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/2-keys-keyboard/)
 
 [讲解](./leecode/leecode650.md)
+
+
+# 673. 最长递增子序列的个数
+[地址](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/)
+
+[讲解](./leecode/leecode673.md)
