@@ -561,3 +561,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/)
 
 [讲解](./leecode/leecode673.md)
+
+
+# 58. 最后一个单词的长度
+[地址](https://leetcode-cn.com/problems/length-of-last-word/)
+
+[题解](./leecode/leecode58.md)
