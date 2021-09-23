@@ -569,6 +569,11 @@ Leecode 刷题
 [题解](./leecode/leecode58.md)
 
 
+# 725. 分隔链表
+[地址](https://leetcode-cn.com/problems/split-linked-list-in-parts/)
+
+[讲解](./leecode/leecode725.md)
+
 # 326. 3的幂
 [地址](https://leetcode-cn.com/problems/power-of-three/)
 
