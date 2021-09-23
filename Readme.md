@@ -567,3 +567,11 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/length-of-last-word/)
 
 [题解](./leecode/leecode58.md)
+
+
+# 326. 3的幂
+[地址](https://leetcode-cn.com/problems/power-of-three/)
+
+
+[讲解](./leecode/leecode326.md)
+
