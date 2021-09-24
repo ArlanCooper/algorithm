@@ -85,7 +85,7 @@
 # 参考解法
 ## 思路
 深度优先遍历
-当我们遍历到某个节点 \textit{node}node 时，如果它的 \textit{child}child 成员不为空，那么我们需要将 \textit{child}child 指向的链表结构进行扁平化，并且插入 \textit{node}node 与 \textit{node}node 的下一个节点之间。
+当我们遍历到某个节点 node 时，如果它的 child 成员不为空，那么我们需要将 child 指向的链表结构进行扁平化，并且插入 node 与 node 的下一个节点之间。
 
 因此，我们在遇到 child 成员不为空的节点时，就要先去处理 child 指向的链表结构，这就是一个「深度优先搜索」的过程。当我们完成了对 child 指向的链表结构的扁平化之后，就可以「回溯」到 node 节点。
 
