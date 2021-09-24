@@ -580,3 +580,9 @@ Leecode 刷题
 
 [讲解](./leecode/leecode326.md)
 
+
+
+# 430. 扁平化多级双向链表
+[地址](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/)
+
+[讲解](./leecode430.md)
