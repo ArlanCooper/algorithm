@@ -586,3 +586,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/)
 
 [讲解](./leecode/leecode430.md)
+
+
+# 583. 两个字符串的删除操作
+[地址](https://leetcode-cn.com/problems/delete-operation-for-two-strings/submissions/)
+
+[讲解](./leecode/leecode583.md)
