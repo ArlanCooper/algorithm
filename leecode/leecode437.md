@@ -9,7 +9,7 @@
 
 
 示例1
-![img](../pic/437_1.png)
+![img](../pic/437_1.jpeg)
 ```
 
 输入：root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
