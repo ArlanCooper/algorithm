@@ -623,3 +623,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/rectangle-area/)
 
 [讲解](./leecode/leecode223.md)
+
+
+# 1436. 旅行终点站
+[地址](https://leetcode-cn.com/problems/destination-city/)
+
+
+[讲解](./leecode/leecode1436.md)
