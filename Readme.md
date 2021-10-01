@@ -630,3 +630,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode1436.md)
+
+
+# 405. 数字转换为十六进制数
+[地址](https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/)
+
+[讲解](./leecode/leecode405.md)
