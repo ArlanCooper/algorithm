@@ -636,3 +636,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/)
 
 [讲解](./leecode/leecode405.md)
+
+
+# 166. 分数到小数
+[地址](https://leetcode-cn.com/problems/fraction-to-recurring-decimal/)
+
+[讲解](./leecode/leecode166.md)
