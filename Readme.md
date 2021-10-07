@@ -644,6 +644,32 @@ Leecode 刷题
 [讲解](./leecode/leecode166.md)
 
 
+# 166. 分数到小数
+[地址](https://leetcode-cn.com/problems/fraction-to-recurring-decimal/)
+
+
+[讲解](./leecode/leecode166.md)
+
+
+# 482. 密钥格式化
+[地址](https://leetcode-cn.com/problems/license-key-formatting/)
+
+[讲解](./leecode/leecode482.md)
+
+
+# 284. 顶端迭代器
+[地址](https://leetcode-cn.com/problems/peeking-iterator/)
+
+[讲解](./leecode/leecode284.md)
+[讲解](./leecode/leecode166.md)
+
+
+# 414. 第三大的数
+[地址](https://leetcode-cn.com/problems/third-maximum-number/)
+
+
+[讲解](./leecode/leecode414.md)
+
 # 434. 字符串中的单词数
 [地址](https://leetcode-cn.com/problems/number-of-segments-in-a-string/)
 
