@@ -642,3 +642,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/fraction-to-recurring-decimal/)
 
 [讲解](./leecode/leecode166.md)
+
+
+# 434. 字符串中的单词数
+[地址](https://leetcode-cn.com/problems/number-of-segments-in-a-string/)
+
+[讲解](./leecode/leecode434.md)
