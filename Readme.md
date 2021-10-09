@@ -674,3 +674,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/number-of-segments-in-a-string/)
 
 [讲解](./leecode/leecode434.md)
+
+
+# 352. 将数据流变为多个不相交区间
+[地址](https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/)
+
+[讲解](./leecode/leecode352.md)
