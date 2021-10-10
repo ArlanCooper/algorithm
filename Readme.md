@@ -680,3 +680,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/)
 
 [讲解](./leecode/leecode352.md)
+
+
+# 441. 排列硬币
+[地址](https://leetcode-cn.com/problems/arranging-coins/)
+
+[讲解](./leecode/leecode441.md)
