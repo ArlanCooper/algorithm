@@ -692,3 +692,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/integer-to-english-words/)
 
 [讲解](./leecode/leecode273.md)
+
+
+# 29. 两数相除
+[地址](https://leetcode-cn.com/problems/divide-two-integers/)
+
+
+[讲解](./leecode/leecode29.md)
