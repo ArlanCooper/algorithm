@@ -699,3 +699,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode29.md)
+
+
+# 412. Fizz Buzz
+[地址](https://leetcode-cn.com/problems/fizz-buzz/)
+
+[讲解](./leecode/leecode412.md)
