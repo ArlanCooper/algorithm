@@ -705,3 +705,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/fizz-buzz/)
 
 [讲解](./leecode/leecode412.md)
+
+
+# 剑指 Offer II 069. 山峰数组的顶部
+[地址](https://leetcode-cn.com/problems/B1IidL/)
+
+[讲解](./leecode/leecode069.md)
