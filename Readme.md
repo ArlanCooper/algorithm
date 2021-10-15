@@ -711,3 +711,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/B1IidL/)
 
 [讲解](./leecode/leecode069.md)
+
+# 38. 外观数列
+[地址](https://leetcode-cn.com/problems/count-and-say/)
+
+[讲解](./leecode/leecode38.md)
+
