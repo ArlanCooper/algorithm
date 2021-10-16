@@ -717,3 +717,8 @@ Leecode 刷题
 
 [讲解](./leecode/leecode38.md)
 
+
+# 282. 给表达式添加运算符
+[地址](https://leetcode-cn.com/problems/expression-add-operators/)
+
+[讲解](./leecode/leecode282.md)
