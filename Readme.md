@@ -722,3 +722,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/expression-add-operators/)
 
 [讲解](./leecode/leecode282.md)
+
+
+# 230. 二叉搜索树中第K小的元素
+[地址](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)
+
+[讲解](./leecode/leecode230.md)
