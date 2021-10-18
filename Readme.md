@@ -728,3 +728,11 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)
 
 [讲解](./leecode/leecode230.md)
+
+
+
+# 476. 数字的补数
+[地址](https://leetcode-cn.com/problems/number-complement/)
+
+
+[讲解](./leecode/leecode476.md)
