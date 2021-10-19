@@ -736,3 +736,10 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode476.md)
+
+
+# 211. 添加与搜索单词 - 数据结构设计
+[地址](https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/)
+
+
+[讲解](./leecode/leecode211.md)
