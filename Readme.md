@@ -749,3 +749,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements/)
 
 [讲解](./leecode/leecode453.md)
+
+# 66. 加一
+[地址](https://leetcode-cn.com/problems/plus-one/)
+
+[讲解](./leecode/leecode66.md)
