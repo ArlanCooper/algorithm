@@ -754,3 +754,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/plus-one/)
 
 [讲解](./leecode/leecode66.md)
+
+# 229. 求众数 II
+[地址](https://leetcode-cn.com/problems/majority-element-ii/)
+
+[讲解](./leecode/leecode229.md)
