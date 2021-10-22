@@ -759,3 +759,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/majority-element-ii/)
 
 [讲解](./leecode/leecode229.md)
+
+
+# 492. 构造矩形
+[地址](https://leetcode-cn.com/problems/construct-the-rectangle/)
+
+[讲解](./leecode/leecode492.md)
