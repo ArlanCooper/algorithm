@@ -771,3 +771,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/submissions/)
 
 [讲解](./leecode/leecode240.md)
+
+
+
+# 496. 下一个更大元素 I
+[地址](https://leetcode-cn.com/problems/next-greater-element-i/submissions/)
+
+[讲解](./leecode/leecode496.md)
