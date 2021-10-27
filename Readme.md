@@ -778,3 +778,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/next-greater-element-i/submissions/)
 
 [讲解](./leecode/leecode496.md)
+
+
+
+# 301. 删除无效的括号
+[地址](https://leetcode-cn.com/problems/remove-invalid-parentheses/)
+
+[讲解](./leecode/leecode301.md)
