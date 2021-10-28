@@ -785,3 +785,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/remove-invalid-parentheses/)
 
 [讲解](./leecode/leecode301.md)
+
+
+# 869. 重新排序得到 2 的幂
+[地址](https://leetcode-cn.com/problems/reordered-power-of-2/)
+
+
+[讲解](./leecode/leecode869.md)
