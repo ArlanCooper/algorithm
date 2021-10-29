@@ -792,3 +792,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode869.md)
+
+
+# 335. 路径交叉
+[地址](https://leetcode-cn.com/problems/self-crossing/)
+
+[讲解](./leecode/leecode335.md)
