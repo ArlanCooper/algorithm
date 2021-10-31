@@ -805,3 +805,10 @@ Leecode 刷题
 
 [讲解](./leecode/leecode260.md)
 
+
+
+# 500. 键盘行
+[地址](https://leetcode-cn.com/problems/keyboard-row/)
+
+[讲解](./leecode/leecode500.md)
+
