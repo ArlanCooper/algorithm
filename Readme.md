@@ -812,3 +812,10 @@ Leecode 刷题
 
 [讲解](./leecode/leecode500.md)
 
+
+
+# 575. 分糖果
+[地址](https://leetcode-cn.com/problems/distribute-candies/)
+
+[讲解](./leecode/leecode575.md)
+
