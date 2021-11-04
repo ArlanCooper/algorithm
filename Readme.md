@@ -831,3 +831,9 @@ Leecode 刷题
 
 
 [讲解](./leecode/leecode407.md)
+
+
+# 367. 有效的完全平方数
+[地址](https://leetcode-cn.com/problems/valid-perfect-square/)
+
+[讲解](./leecode/leecode367.md)
