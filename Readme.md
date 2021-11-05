@@ -837,3 +837,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/valid-perfect-square/)
 
 [讲解](./leecode/leecode367.md)
+
+
+# 1218. 最长定差子序列
+[地址](https://leetcode-cn.com/problems/longest-arithmetic-subsequence-of-given-difference/)
+
+[讲解](./leecode/leecode1218.md)
