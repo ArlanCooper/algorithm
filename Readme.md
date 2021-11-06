@@ -843,3 +843,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/longest-arithmetic-subsequence-of-given-difference/)
 
 [讲解](./leecode/leecode1218.md)
+
+
+# 268. 丢失的数字
+[地址](https://leetcode-cn.com/problems/missing-number/)
+
+[讲解](./leecode/leecode268.md)
