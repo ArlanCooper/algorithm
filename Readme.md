@@ -849,3 +849,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/missing-number/)
 
 [讲解](./leecode/leecode268.md)
+
+# 598. 范围求和 II
+[地址](https://leetcode-cn.com/problems/range-addition-ii/)
+
+[讲解](./leecode/leecode598.md)
