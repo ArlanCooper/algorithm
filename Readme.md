@@ -854,3 +854,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/range-addition-ii/)
 
 [讲解](./leecode/leecode598.md)
+
+# 299. 猜数字游戏
+[地址](https://leetcode-cn.com/problems/bulls-and-cows/)
+
+[讲解](./leecode/leecode299.md)
