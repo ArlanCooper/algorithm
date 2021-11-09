@@ -859,3 +859,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/bulls-and-cows/)
 
 [讲解](./leecode/leecode299.md)
+
+
+# 488. 祖玛游戏
+[地址](https://leetcode-cn.com/problems/zuma-game/)
+
+[讲解](./leecode/leecode488.md)
