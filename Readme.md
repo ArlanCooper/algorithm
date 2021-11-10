@@ -865,3 +865,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/zuma-game/)
 
 [讲解](./leecode/leecode488.md)
+
+
+# 495. 提莫攻击
+[地址](https://leetcode-cn.com/problems/teemo-attacking/)
+
+[讲解](./leecode/leecode495.md)
