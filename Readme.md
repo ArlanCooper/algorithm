@@ -871,3 +871,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/teemo-attacking/)
 
 [讲解](./leecode/leecode495.md)
+
+
+# 629. K个逆序对数组
+[地址](https://leetcode-cn.com/problems/k-inverse-pairs-array/)
+
+[讲解](./leecode/leecode629.md)
