@@ -877,3 +877,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/k-inverse-pairs-array/)
 
 [讲解](./leecode/leecode629.md)
+
+
+# 375. 猜数字大小 II
+[地址](https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/)
+
+[讲解](./leecode/leecode375.md)
