@@ -883,3 +883,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/)
 
 [讲解](./leecode/leecode375.md)
+
+
+# 520. 检测大写字母
+[地址](https://leetcode-cn.com/problems/detect-capital/)
+
+
+[讲解](./leecode/leecode520.md)
