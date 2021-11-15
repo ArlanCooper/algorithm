@@ -895,3 +895,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/map-sum-pairs/)
 
 [讲解](./leecode/leecode677.md)
+
+
+# 319. 灯泡开关
+[地址](https://leetcode-cn.com/problems/bulb-switcher/)
+
+[讲解](./leecode319.md)
