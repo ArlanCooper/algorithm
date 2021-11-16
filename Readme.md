@@ -901,3 +901,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/bulb-switcher/)
 
 [讲解](./leecode319.md)
+
+# 391. 完美矩形
+[地址](https://leetcode-cn.com/problems/perfect-rectangle/)
+
+[讲解](./leecode/leecode391.md)
+[讲解](./leecode319.md)
