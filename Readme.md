@@ -919,3 +919,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/binary-tree-tilt/)
 
 [讲解](./leecode/leecode563.md)
+
+
+# 397. 整数替换
+[地址](https://leetcode-cn.com/problems/integer-replacement/)
+
+[讲解](./leecode/leecode397.md)
