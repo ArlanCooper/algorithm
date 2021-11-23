@@ -925,3 +925,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/integer-replacement/)
 
 [讲解](./leecode/leecode397.md)
+
+# 859. 亲密字符串
+[地址](https://leetcode-cn.com/problems/buddy-strings/)
+
+[讲解](./leecode/leecode859.md)
