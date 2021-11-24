@@ -930,3 +930,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/buddy-strings/)
 
 [讲解](./leecode/leecode859.md)
+
+
+# 423. 从英文中重建数字
+[地址](https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/)
+
+[讲解](./leecode/leecode423.md)
