@@ -948,3 +948,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)
 
 [讲解](./leecode/leecode700.md)
+
+
+# 1446. 连续字符
+[地址](https://leetcode-cn.com/problems/consecutive-characters/)
+
+[讲解](./leecode/leecode1446.md)
