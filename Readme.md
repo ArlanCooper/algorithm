@@ -954,3 +954,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/consecutive-characters/)
 
 [讲解](./leecode/leecode1446.md)
+
+
+# 506. 相对名次
+[地址](https://leetcode-cn.com/problems/relative-ranks/)
+
+[讲解](./leecode/leecode506.md)
