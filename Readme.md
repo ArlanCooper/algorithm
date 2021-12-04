@@ -960,3 +960,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/relative-ranks/)
 
 [讲解](./leecode/leecode506.md)
+
+
+# 383. 赎金信
+[地址](https://leetcode-cn.com/problems/ransom-note/)
+
+[讲解](./leecode/leecode383.md)
