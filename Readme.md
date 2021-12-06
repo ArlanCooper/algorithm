@@ -966,3 +966,9 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/ransom-note/)
 
 [讲解](./leecode/leecode383.md)
+
+
+# 1816. 截断句子
+[地址](https://leetcode-cn.com/problems/truncate-sentence/)
+
+[讲解](./leecode/leecode1816.md)
