@@ -972,3 +972,8 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/truncate-sentence/)
 
 [讲解](./leecode/leecode1816.md)
+
+# 794. 有效的井字游戏
+[地址](https://leetcode-cn.com/problems/valid-tic-tac-toe-state/)
+
+[讲解](./leecode/leecode794.md)
