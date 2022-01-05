@@ -977,3 +977,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/valid-tic-tac-toe-state/)
 
 [讲解](./leecode/leecode794.md)
+
+
+# 1576. 替换所有的问号
+
+[地址](https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/)
+
+[讲解](./leecode/leecode1576.md)
