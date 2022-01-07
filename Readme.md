@@ -989,3 +989,10 @@ Leecode 刷题
 [地址](https://leetcode-cn.com/problems/simplify-path/)
 
 [讲解](./leecode/leecode71.md)
+
+
+# 1614. 括号的最大嵌套深度
+
+[地址](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/)
+
+[讲解](./leecode/leecode1614.md)
