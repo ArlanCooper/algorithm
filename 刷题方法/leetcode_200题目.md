@@ -1,6 +1,9 @@
 # 第一周，链表、栈、队列
+
 ## 单链表定义
+
 单向链表也叫单链表，是链表中最简单的一种形式，它的每个节点包含两个域，一个信息域（元素域）和一个链接域。这个链接指向链表中的下一个节点，而最后一个节点的链接域则指向一个空值。
+
 ```python
 class SingleNode(object):
     """单链表的结点"""
@@ -11,14 +14,16 @@ class SingleNode(object):
         self.next = None
 ```
 
-
 ##leetcode206
 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
 ![img](./pic/leetcode206.jpg)
 
 ### 解题思路
+
 在遍历链表时，将当前节点的 next\textit{next}next 指针改为指向前一个节点。由于节点没有引用其前一个节点，因此必须事先存储其前一个节点。在更改引用之前，还需要存储后一个节点。最后返回新的头引用。
+
 ### python
+
 ```python
 class ListNode:
     def __init__(self,val = 0, next = None):
@@ -36,13 +41,10 @@ class Solution:
             prev = curr
             curr = onext
         return prev
-            
-
 ```
 
-
-
 ## leetcode160
+
 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
 图示两个链表在节点 c1 开始相交：
 ![img](./pic/160_statement.png)
@@ -53,6 +55,7 @@ class Solution:
 
 示例 1：
 ![img](./pic/160_example_1_1.png)
+
 ```angular2html
 输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
 输出：Intersected at '8'
@@ -61,7 +64,9 @@ class Solution:
 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
 — 请注意相交节点的值不为 1，因为在链表 A 和链表 B 之中值为 1 的节点 (A 中第二个节点和 B 中第三个节点) 是不同的节点。换句话说，它们在内存中指向两个不同的位置，而链表 A 和链表 B 中值为 8 的节点 (A 中第三个节点，B 中第四个节点) 在内存中指向相同的位置。
 ```
+
 ### 解题思路
+
 一图胜千言，看图你就明白了
 
 空间复杂度 O(1)O(1)O(1) 时间复杂度为 O(n)O(n)O(n)
@@ -82,6 +87,7 @@ class Solution:
 ![img](./pic/leetcode160.png)
 
 ### python
+
 ```python
 class ListNode:
     def __init(self,val = 0, next = None):
@@ -99,19 +105,23 @@ class Solution:
 ```
 
 ## leetcode21
-将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 
 示例 1：
 ![img](./pic/21_merge_ex1.jpg)
+
 ```angular2html
 输入：l1 = [1,2,4], l2 = [1,3,4]
 输出：[1,1,2,3,4,4]
 ```
 
 ### 解题思路
+
 当 l1 和 l2 都不是空链表时，判断 l1 和 l2 哪一个链表的头节点的值更小，将较小值的节点添加到结果里，当一个节点被添加到结果里之后，将对应链表中的节点向后移一位。
 
 ### python
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -149,10 +159,10 @@ class Solution:
         if list2:
             tmp.next = list2
         return ans
-
 ```
 
 ### python2
+
 ```python
 class ListNode:
     def __init__(self, val = 0, next = None):
@@ -177,10 +187,102 @@ class Solution:
 
         return prehead.next
 ```
- 
+
+## leetcode86 **分隔链表**
+
+给你一个链表的头节点 `head` 和一个特定值 `x` ，请你对链表进行分隔，使得所有 **小于** `x` 的节点都出现在 **大于或等于** `x` 的节点之前。
+
+你应当 **保留** 两个分区中每个节点的初始相对位置。
+
+示例1:
+![img](./pic/86_partition.jpg)
+
+```
+输入：head = [1,4,3,2,5,2], x = 3
+输出：[1,2,2,4,3,5]
+```
+
+### python(我的解法)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
+        if head is None:
+            return None
+        new_head = None
+        big_head = None
+        big_node = None
+        small_node = None
+        curr = head
+        while curr:
+            if curr.val < x:
+                if new_head is None:
+                    new_head = curr
+                    small_node = new_head
+                else:
+                    small_node.next = curr
+                    small_node = small_node.next
+            else:
+                if big_head is None:
+                    big_head = curr
+                    big_node = big_head
+                else:
+                    big_node.next = curr
+                    big_node = big_node.next
+            curr = curr.next
+        if big_node:
+            big_node.next = None
+        if small_node:
+            small_node.next = None
+            small_node.next = big_head
+        return new_head if new_head else big_head
+                
+```
+
+
+### python(参考解法)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
+        if head is None:
+            return None
+        small = ListNode()
+        small_head = small
+        big = ListNode()
+        big_head = big
+        while head:
+            if head.val < x:
+                small.next = head
+                small = small.next
+            else:
+                big.next = head
+                big = big.next
+            head = head.next
+        big.next = None
+        small.next = big_head.next
+        return small_head.next
+                
+```
+
+
+
+
+
+
 
 
 
 
 # 参考文献
+
 1. https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html
+
