@@ -203,6 +203,7 @@ class Solution:
 ```
 
 ### python(我的解法)
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -240,11 +241,10 @@ class Solution:
             small_node.next = None
             small_node.next = big_head
         return new_head if new_head else big_head
-                
 ```
 
-
 ### python(参考解法)
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -270,16 +270,80 @@ class Solution:
         big.next = None
         small.next = big_head.next
         return small_head.next
-                
 ```
 
+## leetcode142 环形链表 II
 
+给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
 
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
 
+不允许修改 链表。
 
+示例1:
+![img](./pic/142_circularlinkedlist.png)
 
+```angular2html
+输入：head = [3,2,0,-4], pos = 1
+输出：返回索引为 1 的链表节点
+解释：链表中有一个环，其尾部连接到第二个节点。
+```
 
+###题解
+这类链表题目一般都是使用双指针法解决的，例如寻找距离尾部第 K 个节点、寻找环入口、寻找公共尾部入口等。
 
+算法流程：
+
+1. 双指针第一次相遇： 设两指针 fast，slow 指向链表头部 head，fast 每轮走 2 步，slow 每轮走 1 步；
+   
+   a. 第一种结果： fast 指针走过链表末端，说明链表无环，直接返回 null；
+   
+   ```
+   - TIPS: 若有环，两指针一定会相遇。因为每走 111 轮，fast 与 slow 的间距 +1+1+1，fast 终会追上 slow；
+   ```
+   
+   b. 第二种结果： 当fast == slow时， 两指针在环中 第一次相遇 。下面分析此时fast 与 slow走过的 步数关系 ：
+   
+   - 设链表共有 a+b个节点，其中 链表头部到链表入口 有 aaa 个节点（不计链表入口节点）， 链表环 有 bbb 个节点（这里需要注意，aaa 和 bbb 是未知数，例如图解上链表 a=4, b=5）；设两指针分别走了 f，s 步，则有：
+   - a. fast 走的步数是slow步数的 222 倍，即 f=2s；（解析： fast 每轮走 2 步）
+   - fast 比 slow多走了 n个环的长度，即 f=s+nb；（ 解析： 双指针都走过 aaa 步，然后在环内绕圈直到重合，重合时 fast 比 slow 多走 环的长度整数倍 ）；
+   - 以上两式相减得：f=2nb，s=nb，即fast和slow 指针分别走了2n，n个 环的周长 （注意： n是未知数，不同链表的情况不同）。
+2. 目前情况分析：
+
+如果让指针从链表头部一直向前走并统计步数k，那么所有 走到链表入口节点时的步数 是：k=a+nb（先走 a 步到入口节点，之后每绕 1圈环（ b步）都会再次到入口节点）。
+而目前，slow 指针走过的步数为 nb 步。因此，我们只要想办法让 slow 再走 a步停下来，就可以到环的入口。
+但是我们不知道 a的值，该怎么办？依然是使用双指针法。我们构建一个指针，此指针需要有以下性质：此指针和slow 一起向前走 a 步后，两者在入口节点重合。那么从哪里走到入口节点需要 a步？答案是链表头部head。
+
+3. 双指针第二次相遇：
+
+slow指针 位置不变 ，将fast指针重新 指向链表头部节点 ；slow和fast同时每轮向前走 1步；
+TIPS：此时 f=0，s=nb；
+当 fast 指针走到f=a步时，slow 指针走到步s=a+nb，此时 两指针重合，并同时指向链表环入口 。
+
+4. 返回slow指针指向的节点。
+
+### python（参考解法）
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast, slow = head,head
+        while True:
+            if not (fast and fast.next):
+                return
+            fast,slow = fast.next.next, slow.next
+            if fast == slow:
+                break
+        fast = head
+        while fast != slow:
+            fast,slow = fast.next, slow.next
+        return fast
+```
 
 
 # 参考文献
