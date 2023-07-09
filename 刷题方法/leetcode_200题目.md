@@ -1,3 +1,8 @@
+刷题
+====
+
+[toc]
+
 # 第一周，链表、栈、队列
 
 ## 单链表定义
@@ -179,7 +184,7 @@ class Solution:
                 l1 = l1.next
             else:
                 prev.next = l2
-                l2 = l2.next            
+                l2 = l2.next          
             prev = prev.next
 
         # 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
@@ -295,15 +300,15 @@ class Solution:
 算法流程：
 
 1. 双指针第一次相遇： 设两指针 fast，slow 指向链表头部 head，fast 每轮走 2 步，slow 每轮走 1 步；
-   
+
    a. 第一种结果： fast 指针走过链表末端，说明链表无环，直接返回 null；
-   
+
    ```
    - TIPS: 若有环，两指针一定会相遇。因为每走 111 轮，fast 与 slow 的间距 +1+1+1，fast 终会追上 slow；
    ```
-   
+
    b. 第二种结果： 当fast == slow时， 两指针在环中 第一次相遇 。下面分析此时fast 与 slow走过的 步数关系 ：
-   
+
    - 设链表共有 a+b个节点，其中 链表头部到链表入口 有 aaa 个节点（不计链表入口节点）， 链表环 有 bbb 个节点（这里需要注意，aaa 和 bbb 是未知数，例如图解上链表 a=4, b=5）；设两指针分别走了 f，s 步，则有：
    - a. fast 走的步数是slow步数的 222 倍，即 f=2s；（解析： fast 每轮走 2 步）
    - fast 比 slow多走了 n个环的长度，即 f=s+nb；（ 解析： 双指针都走过 aaa 步，然后在环内绕圈直到重合，重合时 fast 比 slow 多走 环的长度整数倍 ）；
@@ -323,6 +328,7 @@ TIPS：此时 f=0，s=nb；
 4. 返回slow指针指向的节点。
 
 ### python（参考解法）
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -344,9 +350,175 @@ class Solution:
             fast,slow = fast.next, slow.next
         return fast
 ```
+## leetcode92 反转链表 II
+给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
+
+示例1：
+![img](./pic/92_rev2ex2.jpg)
+```angular2html
+输入：head = [1,2,3,4,5], left = 2, right = 4
+输出：[1,4,3,2,5]
+```
+
+
+### python（我的解法）
+思路很简单：
+1. 如果left == right,直接返回原来的链表即可；
+2. 遍历链表，根据left和right的值，调换里面的节点顺序，主要需要注意，left从1开始编号，而且，如果left等于1的时候的边界处理情况;
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        if left == right:
+            return head
+        
+        i = 1
+        prev = None
+        curr = head
+        while curr:
+            if i == left:
+                new_curr = curr
+                new_prev = prev
+                nex = curr.next
+                curr.next = prev
+                prev  = curr
+                curr = nex
+            elif i < right and i > left:
+                nex = curr.next
+                curr.next = prev
+                prev  = curr
+                curr = nex
+            elif i == right:
+                nex = curr.next
+                curr.next = prev
+                if new_prev:
+                    new_prev.next = curr
+                else:
+                    head = curr
+                new_curr.next = nex
+                break
+            
+            else:
+                prev = curr
+                curr = curr.next
+            
+            i += 1
+        return head
+```
+
+###参考思路
+第 1 步：先将待反转的区域反转；
+
+第 2 步：把 pre 的 next 指针指向反转以后的链表头节点，把反转以后的链表的尾节点的 next 指针指向 succ。
+
+**因为头节点有可能发生变化，使用虚拟头节点可以避免复杂的分类讨论**
+**dummy_node = ListNode(-1)**
+
+
+### python(参考)
+```python
+class Solution:
+    def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:
+        def reverse_linked_list(head: ListNode):
+            # 也可以使用递归反转一个链表
+            pre = None
+            cur = head
+            while cur:
+                next = cur.next
+                cur.next = pre
+                pre = cur
+                cur = next
+
+        # 因为头节点有可能发生变化，使用虚拟头节点可以避免复杂的分类讨论
+        dummy_node = ListNode(-1)
+        dummy_node.next = head
+        pre = dummy_node
+        # 第 1 步：从虚拟头节点走 left - 1 步，来到 left 节点的前一个节点
+        # 建议写在 for 循环里，语义清晰
+        for _ in range(left - 1):
+            pre = pre.next
+
+        # 第 2 步：从 pre 再走 right - left + 1 步，来到 right 节点
+        right_node = pre
+        for _ in range(right - left + 1):
+            right_node = right_node.next
+        # 第 3 步：切断出一个子链表（截取链表）
+        left_node = pre.next
+        curr = right_node.next
+
+        # 注意：切断链接
+        pre.next = None
+        right_node.next = None
+
+        # 第 4 步：同第 206 题，反转链表的子区间
+        reverse_linked_list(left_node)
+        # 第 5 步：接回到原来的链表中
+        pre.next = right_node
+        left_node.next = curr
+        return dummy_node.next
+```
+
+## leetcode138 复制带随机指针的链表
+给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。
+
+构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。
+
+例如，如果原链表中有 X 和 Y 两个节点，其中 X.random --> Y 。那么在复制链表中对应的两个节点 x 和 y ，同样有 x.random --> y 。
+
+返回复制链表的头节点。
+
+用一个由 n 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 [val, random_index] 表示：
+
+val：一个表示 Node.val 的整数。
+random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为  null 。
+你的代码 只 接受原链表的头节点 head 作为传入参数。
+
+示例1:
+![img](./pic/138_e1.png)
+```angular2html
+输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
+```
+
+### 思路
+本题要求我们对一个特殊的链表进行深拷贝。如果是普通链表，我们可以直接按照遍历的顺序创建链表节点。而本题中因为随机指针的存在，当我们拷贝节点时，「当前节点的随机指针指向的节点」可能还没创建，因此我们需要变换思路。一个可行方案是，我们利用回溯的方式，让每个节点的拷贝操作相互独立。对于当前节点，我们首先要进行拷贝，然后我们进行「当前节点的后继节点」和「当前节点的随机指针指向的节点」拷贝，拷贝完成后将创建的新节点的指针返回，即可完成当前节点的两指针的赋值。
+
+具体地，我们用哈希表记录每一个节点对应新节点的创建情况。遍历该链表的过程中，我们检查「当前节点的后继节点」和「当前节点的随机指针指向的节点」的创建情况。如果这两个节点中的任何一个节点的新节点没有被创建，我们都立刻递归地进行创建。当我们拷贝完成，回溯到当前层时，我们即可完成当前节点的指针赋值。注意一个节点可能被多个其他节点指向，因此我们可能递归地多次尝试拷贝某个节点，为了防止重复拷贝，我们需要首先检查当前节点是否被拷贝过，如果已经拷贝过，我们可以直接从哈希表中取出拷贝后的节点的指针并返回即可。
+
+在实际代码中，我们需要特别判断给定节点为空节点的情况。
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        node_dic = {}
+        def get_new_list(nod):
+            if not nod:
+                return None
+            if nod not in node_dic:
+                nod_new = Node(nod.val)
+                node_dic[nod] = nod_new
+                nod_new.next = get_new_list(nod.next)
+                nod_new.random = get_new_list(nod.random)
+            return node_dic[nod]
+        return get_new_list(head)
+
+```
+
+
 
 
 # 参考文献
 
 1. https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html
-
