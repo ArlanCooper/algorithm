@@ -300,15 +300,15 @@ class Solution:
 算法流程：
 
 1. 双指针第一次相遇： 设两指针 fast，slow 指向链表头部 head，fast 每轮走 2 步，slow 每轮走 1 步；
-
+   
    a. 第一种结果： fast 指针走过链表末端，说明链表无环，直接返回 null；
-
+   
    ```
    - TIPS: 若有环，两指针一定会相遇。因为每走 111 轮，fast 与 slow 的间距 +1+1+1，fast 终会追上 slow；
    ```
-
+   
    b. 第二种结果： 当fast == slow时， 两指针在环中 第一次相遇 。下面分析此时fast 与 slow走过的 步数关系 ：
-
+   
    - 设链表共有 a+b个节点，其中 链表头部到链表入口 有 aaa 个节点（不计链表入口节点）， 链表环 有 bbb 个节点（这里需要注意，aaa 和 bbb 是未知数，例如图解上链表 a=4, b=5）；设两指针分别走了 f，s 步，则有：
    - a. fast 走的步数是slow步数的 222 倍，即 f=2s；（解析： fast 每轮走 2 步）
    - fast 比 slow多走了 n个环的长度，即 f=s+nb；（ 解析： 双指针都走过 aaa 步，然后在环内绕圈直到重合，重合时 fast 比 slow 多走 环的长度整数倍 ）；
@@ -350,21 +350,26 @@ class Solution:
             fast,slow = fast.next, slow.next
         return fast
 ```
+
 ## leetcode92 反转链表 II
+
 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
 
 示例1：
 ![img](./pic/92_rev2ex2.jpg)
+
 ```angular2html
 输入：head = [1,2,3,4,5], left = 2, right = 4
 输出：[1,4,3,2,5]
 ```
 
-
 ### python（我的解法）
+
 思路很简单：
+
 1. 如果left == right,直接返回原来的链表即可；
 2. 遍历链表，根据left和right的值，调换里面的节点顺序，主要需要注意，left从1开始编号，而且，如果left等于1的时候的边界处理情况;
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -418,8 +423,8 @@ class Solution:
 **因为头节点有可能发生变化，使用虚拟头节点可以避免复杂的分类讨论**
 **dummy_node = ListNode(-1)**
 
-
 ### python(参考)
+
 ```python
 class Solution:
     def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:
@@ -463,6 +468,7 @@ class Solution:
 ```
 
 ## leetcode138 复制带随机指针的链表
+
 给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。
 
 构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。
@@ -479,12 +485,14 @@ random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如�
 
 示例1:
 ![img](./pic/138_e1.png)
+
 ```angular2html
 输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
 输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
 ```
 
 ### 思路
+
 本题要求我们对一个特殊的链表进行深拷贝。如果是普通链表，我们可以直接按照遍历的顺序创建链表节点。而本题中因为随机指针的存在，当我们拷贝节点时，「当前节点的随机指针指向的节点」可能还没创建，因此我们需要变换思路。一个可行方案是，我们利用回溯的方式，让每个节点的拷贝操作相互独立。对于当前节点，我们首先要进行拷贝，然后我们进行「当前节点的后继节点」和「当前节点的随机指针指向的节点」拷贝，拷贝完成后将创建的新节点的指针返回，即可完成当前节点的两指针的赋值。
 
 具体地，我们用哈希表记录每一个节点对应新节点的创建情况。遍历该链表的过程中，我们检查「当前节点的后继节点」和「当前节点的随机指针指向的节点」的创建情况。如果这两个节点中的任何一个节点的新节点没有被创建，我们都立刻递归地进行创建。当我们拷贝完成，回溯到当前层时，我们即可完成当前节点的指针赋值。注意一个节点可能被多个其他节点指向，因此我们可能递归地多次尝试拷贝某个节点，为了防止重复拷贝，我们需要首先检查当前节点是否被拷贝过，如果已经拷贝过，我们可以直接从哈希表中取出拷贝后的节点的指针并返回即可。
@@ -513,12 +521,376 @@ class Solution:
                 nod_new.random = get_new_list(nod.random)
             return node_dic[nod]
         return get_new_list(head)
-
 ```
 
+## 栈的基础知识
+
+堆栈（Stack）：简称为栈。一种线性表数据结构，是一种只允许在表的一端进行插入和删除操作的线性表。
+我们把栈中允许插入和删除的一端称为 「栈顶（top）」；另一端则称为 「栈底（bottom）」。当表中没有任何数据元素时，称之为 「空栈」。
+
+栈的基本性质：先进后出。
+
+## leetcode20 有效的括号
+
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+
+有效字符串需满足：
+
+左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。
+每个右括号都有一个对应的相同类型的左括号。
+
+示例 1：
+
+```angular2html
+输入：s = "()"
+输出：true
+```
+
+### 思路
+
+栈先入后出特点恰好与本题括号排序特点一致，即若遇到左括号入栈，遇到右括号时将对应栈顶左括号出栈，则遍历完所有括号后 stack 仍然为空；
+
+建立哈希表 dic 构建左右括号对应关系：keykeykey 左括号，valuevaluevalue 右括号；这样查询 222 个括号是否对应只需 O(1)O(1)O(1) 时间复杂度；建立栈 stack，遍历字符串 s 并按照算法流程一一判断。
+
+### python（参考解法）
+
+```python
+class Solution:
+    def isValid(selfself, s):
+        dic = {'{':'}','[':']','(':')','?':'?'}
+        stack = ['?']
+        for i in s:
+            if i in dic:
+                stack.append(i)
+            else:
+                if dic[stack.pop()] != i:
+                    return False
+        return True
+```
+
+## leetcode 224 基本计算器
+
+给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。
+
+注意:不允许使用任何将字符串作为数学表达式计算的内置函数，比如 eval() 。
+
+示例1：
+
+```angular2html
+输入：s = "(1+(4+5+2)-3)+(6+8)"
+输出：23
+```
+
+### 解题思路
+
+由于字符串除了数字与括号外，只有加号和减号两种运算符。因此，如果展开表达式中所有的括号，则得到的新表达式中，数字本身不会发生变化，只是每个数字前面的符号会发生变化。
+
+因此，我们考虑使用一个取值为 {−1,+1}的整数 sign代表「当前」的符号。根据括号表达式的性质，它的取值：
+
+与字符串中当前位置的运算符有关；
+如果当前位置处于一系列括号之内，则也与这些括号前面的运算符有关：每当遇到一个以 −-− 号开头的括号，则意味着此后的符号都要被「翻转」。
+考虑到第二点，我们需要维护一个栈 ops，其中栈顶元素记录了当前位置所处的每个括号所「共同形成」的符号。例如，对于字符串 1+2+(3-(4+5))：
+
+扫描到 1+2时，由于当前位置没有被任何括号所包含，则栈顶元素为初始值 +1；
+扫描到 1+2+(3时，当前位置被一个括号所包含，该括号前面的符号为+号，因此栈顶元素依然 +1；
+扫描到 1+2+(3-(4时，当前位置被两个括号所包含，分别对应着+号和−号，由于 +号和−号合并的结果为−号，因此栈顶元素变为−1。
+在得到栈 ops之后，sign的取值就能够确定了：如果当前遇到了+号，则更新 sign←ops.top()；如果遇到了遇到了−号，则更新 sign←−ops.top()。
+
+然后，每当遇到 (时，都要将当前的 sign取值压入栈中；每当遇到)时，都从栈中弹出一个元素。这样，我们能够在扫描字符串的时候，即时地更新 ops中的元素。
+
+### python(参考解法)
+
+```python
+class Solution:
+    def calculate(self, s):
+        opt = [1]
+        sign = 1
+        ret = 0
+        n = len(s)
+        i = 0
+        while i < n:
+            if s[i] == ' ':
+                i += 1
+            elif s[i] == '+':
+                sign = opt[-1]
+                i += 1
+            elif s[i] == '-':
+                sign = -opt[-1]
+                i += 1
+            elif s[i] == '(':
+                opt.append(sign)
+                i += 1
+            elif s[i] == ')':
+                opt.pop()
+                i += 1
+            else:
+                num = 0
+                while i < n and s[i].isdigit():
+                    num = num * 10 + int(s[i])
+                    i += 1
+                ret += num * sign
+        return ret
+```
+
+## leetcode155 最小栈
+
+设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+
+实现 MinStack 类:
+
+- MinStack() 初始化堆栈对象。
+- void push(int val) 将元素val推入堆栈。
+- void pop() 删除堆栈顶部的元素。
+- int top() 获取堆栈顶部的元素。
+- int getMin() 获取堆栈中的最小元素。
+
+示例1:
+
+```angular2html
+输入：
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
+
+输出：
+[null,null,null,null,-3,null,0,-2]
+
+解释：
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+```
+
+### python(我的解法)
+
+思路：按照栈的方式，存储即可，主要是存储最小值，在pop的时候，需要更新最小值。
+
+```python
+class MinStack:
+
+    def __init__(self):
+        self.stock = []
+        self.min = 2**31
+
+
+    def push(self, val: int) -> None:
+        self.stock.append(val)
+        if val < self.min:
+            self.min = val
+
+
+    def pop(self) -> None:
+        val = self.stock.pop()
+        self.min = min(self.stock) if len(self.stock) > 0 else 2**31
+        return val
+
+
+    def top(self) -> int:
+        return self.stock[-1]
+
+
+    def getMin(self) -> int:
+        return self.min
+
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(val)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+```
+
+### 参考思路
+
+我们只需要设计一个数据结构，使得每个元素 a 与其相应的最小值 m 时刻保持一一对应。因此我们可以使用一个辅助栈，与元素栈同步插入与删除，用于存储与每个元素对应的最小值。
+
+- 当一个元素要入栈时，我们取当前辅助栈的栈顶存储的最小值，与当前元素比较得出最小值，将这个最小值插入辅助栈中；
+- 当一个元素要出栈时，我们把辅助栈的栈顶元素也一并弹出；
+- 在任意一个时刻，栈内元素的最小值就存储在辅助栈的栈顶元素中。
+
+```python
+class MinStack:
+
+    def __init__(self):
+        self.stock = []
+        self.min_stack = [math.inf]
+
+
+    def push(self, val: int) -> None:
+        self.stock.append(val)
+        self.min_stack.append(min(val,self.min_stack[-1]))
+
+    def pop(self) -> None:
+        self.stock.pop()
+        self.min_stack.pop()
+
+
+    def top(self) -> int:
+        return self.stock[-1]
+
+
+    def getMin(self) -> int:
+        return self.min_stack[-1]
+
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(val)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+```
+
+## leetcode946 验证栈序列
+
+给定 pushed 和 popped 两个序列，每个序列中的 值都不重复，只有当它们可能是在最初空栈上进行的推入 push 和弹出 pop 操作序列的结果时，返回 true；否则，返回 false 。
+
+示例1:
+
+```angular2html
+输入：pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+输出：true
+解释：我们可以按以下顺序执行：
+push(1), push(2), push(3), push(4), pop() -> 4,
+push(5), pop() -> 5, pop() -> 3, pop() -> 2, pop() -> 1
+```
+
+###参考思路
+这道题需要利用给定的两个数组 pushed和 popped的如下性质：
+
+数组 pushed中的元素互不相同；
+
+数组 popped和数组pushed的长度相同；
+
+数组 popped是数组 pushed的一个排列。
+
+根据上述性质，可以得到如下结论：
+
+栈内不可能出现重复元素；
+
+如果 pushed和popped是有效的栈操作序列，则经过所有的入栈和出栈操作之后，每个元素各入栈和出栈一次，栈为空。
+
+因此，可以遍历两个数组，模拟入栈和出栈操作，判断两个数组是否为有效的栈操作序列。
+
+模拟入栈操作可以通过遍历数组 pushed实现。由于只有栈顶的元素可以出栈，因此模拟出栈操作需要判断栈顶元素是否与 popped的当前元素相同，如果相同则将栈顶元素出栈。由于元素互不相同，因此当栈顶元素与 popped的当前元素相同时必须将栈顶元素出栈，否则出栈顺序一定不等于 popped。
+
+根据上述分析，验证栈序列的模拟做法如下：
+
+遍历数组 pushed，将 pushed的每个元素依次入栈；
+
+每次将 pushed的元素入栈之后，如果栈不为空且栈顶元素与 popped的当前元素相同，则将栈顶元素出栈，同时遍历数组 popped，直到栈为空或栈顶元素与 popped的当前元素不同。
+
+遍历数组 pushed结束之后，每个元素都按照数组 pushed的顺序入栈一次。
+如果栈为空，则每个元素都按照数组 popped的顺序出栈，返回 true。如果栈不为空，则元素不能按照数组 popped的顺序出栈，返回 false。
+
+### python(参考解法)
+
+```python
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        st = []
+        j = 0
+        for i in pushed:
+            st.append(i)
+            while st and st[-1] == popped[j]:
+                st.pop()
+                j += 1
+        return len(st) == 0
+```
+
+## leetcode 739每日温度
+
+给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。
+
+示例1:
+
+```angular2html
+输入: temperatures = [73,74,75,71,69,72,76,73]
+输出: [1,1,4,2,1,1,0,0]
+```
+
+### 参考思路
+
+可以维护一个存储下标的单调栈，从栈底到栈顶的下标对应的温度列表中的温度依次递减。如果一个下标在单调栈里，则表示尚未找到下一次温度更高的下标。
+
+正向遍历温度列表。对于温度列表中的每个元素 temperatures[i]，如果栈为空，则直接将 i 进栈，如果栈不为空，则比较栈顶元素 prevIndex 对应的温度 temperatures[prevIndex] 和当前温度 temperatures[i]，如果 temperatures[i] > temperatures[prevIndex]，则将 prevIndex 移除，并将 prevIndex 对应的等待天数赋为 i - prevIndex，重复上述操作直到栈为空或者栈顶元素对应的温度小于等于当前温度，然后将 i 进栈。
+
+为什么可以在弹栈的时候更新 ans[prevIndex] 呢？因为在这种情况下，即将进栈的 i 对应的 temperatures[i] 一定是 temperatures[prevIndex] 右边第一个比它大的元素，试想如果 prevIndex 和 i 有比它大的元素，假设下标为 j，那么 prevIndex 一定会在下标 j 的那一轮被弹掉。
+
+由于单调栈满足从栈底到栈顶元素对应的温度递减，因此每次有元素进栈时，会将温度更低的元素全部移除，并更新出栈元素对应的等待天数，这样可以确保等待天数一定是最小的。
+
+### python(参考)
+
+```python
+class Solution:
+    def dailyTemperature(self, temperatures):
+        stack = []
+        n = len(temperatures)
+        ans = [0 for _ in range(n)]
+        for i in range(n):
+            while stack and temperatures[i] > temperatures[stack[-1]]:
+                pre = stack.pop()
+                ans[pre] = i - pre
+            stack.append(i)
+        return ans
+```
+
+## leetcode42 接雨水
+
+给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+
+示例1:
+![img](./pic/42_rainwatertrap.png)
+
+输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
+输出：6
+解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。
+
+### 解题思路
+
+除了计算并存储每个位置两边的最大高度以外，也可以用单调栈计算能接的雨水总量。
+
+维护一个单调栈，单调栈存储的是下标，满足从栈底到栈顶的下标对应的数组 height中的元素递减。
+
+从左到右遍历数组，遍历到下标 i 时，如果栈内至少有两个元素，记栈顶元素为 top 的下面一个元素是left，则一定有 height[left]≥height[top]。如果 height[i]>height[top]，则得到一个可以接雨水的区域，该区域的宽度是 i−left−1，高度是 min⁡(height[left],height[i])−height[top]，根据宽度和高度即可计算得到该区域能接的雨水量。
+
+为了得到 left，需要将top出栈。在对top计算能接的雨水量之后，left变成新的top，重复上述操作，直到栈变为空，或者栈顶下标对应的 height中的元素大于或等于height[i]。
+
+在对下标 i 处计算能接的雨水量之后，将i入栈，继续遍历后面的下标，计算能接的雨水量。遍历结束之后即可得到能接的雨水总量。
+
+### python(参考)
+```python
+class Solution:
+    def trap(self, height):
+        stack = []
+        ans = 0
+        n = len(height)
+        for i,h in enumerate(height):
+            while stack and h > height[stack[-1]]:
+                top = stack.pop()
+                if not stack:
+                    break
+                left = stack[-1]
+                weight = i - left - 1
+                curheight = min(h, height[left]) - height[top]
+                ans += weight * curheight
+            stack.append(i)
+        return ans
+```
 
 
 
 # 参考文献
 
 1. https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html
+2. https://github.com/itcharge/LeetCode-Py
+3. https://algo.itcharge.cn/03.Stack/01.Stack-Basic/01.Stack-Basic/
+
