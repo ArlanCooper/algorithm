@@ -184,7 +184,7 @@ class Solution:
                 l1 = l1.next
             else:
                 prev.next = l2
-                l2 = l2.next          
+                l2 = l2.next        
             prev = prev.next
 
         # 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
@@ -380,7 +380,7 @@ class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         if left == right:
             return head
-        
+      
         i = 1
         prev = None
         curr = head
@@ -406,11 +406,11 @@ class Solution:
                     head = curr
                 new_curr.next = nex
                 break
-            
+          
             else:
                 prev = curr
                 curr = curr.next
-            
+          
             i += 1
         return head
 ```
@@ -867,6 +867,7 @@ class Solution:
 在对下标 i 处计算能接的雨水量之后，将i入栈，继续遍历后面的下标，计算能接的雨水量。遍历结束之后即可得到能接的雨水总量。
 
 ### python(参考)
+
 ```python
 class Solution:
     def trap(self, height):
@@ -886,7 +887,183 @@ class Solution:
         return ans
 ```
 
+## 队列基础知识
 
+一种线性表数据结构，是一种只允许在表的一端进行插入操作，而在表的另一端进行删除操作的线性表。
+我们把队列中允许插入的一端称为 「队尾（rear）」；把允许删除的另一端称为 「队头（front）」。当表中没有任何数据元素时，称之为 「空队」。
+
+队列有两种基本操作：「插入操作」 和 「删除操作」。
+
+- 队列的插入操作又称为「入队」。
+- 队列的删除操作又称为「出队」。
+
+简单来说，队列是一种 「先进先出（First In First Out）」 的线性表，简称为 「FIFO 结构」。
+
+## leetcode232 用栈实现队列
+
+请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
+
+实现 MyQueue 类：
+
+- void push(int x) 将元素 x 推到队列的末尾
+- int pop() 从队列的开头移除并返回元素
+- int peek() 返回队列开头的元素
+- boolean empty() 如果队列为空，返回 true ；否则，返回 false
+
+示例 1：
+
+```angular2html
+输入：
+["MyQueue", "push", "push", "peek", "pop", "empty"]
+[[], [1], [2], [], [], []]
+输出：
+[null, null, null, 1, 1, false]
+
+解释：
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
+```
+
+### python(我的解法)
+
+```python
+class MyQueue:
+
+    def __init__(self):
+        self.queue = []
+
+
+    def push(self, x: int) -> None:
+        self.queue.append(x)
+
+
+    def pop(self) -> int:
+        elm = self.queue[0]
+        self.queue = self.queue[1:]
+        return elm
+
+
+    def peek(self) -> int:
+        return self.queue[0]
+
+
+    def empty(self) -> bool:
+        return len(self.queue) == 0
+
+
+
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
+```
+
+### 参考思路
+
+将一个栈当作输入栈，用于压入push传入的数据；另一个栈当作输出栈，用于 pop和 peek操作。
+
+每次 pop或 peek时，若输出栈为空则将输入栈的全部数据依次弹出并压入输出栈，这样输出栈从栈顶往栈底的顺序就是队列从队首往队尾的顺序。
+
+### python (参考)
+
+```python
+class MyQueue:
+
+    def __init__(self):
+        self.inqueue = []
+        self.outqueue = []
+
+
+    def push(self, x: int) -> None:
+        self.inqueue.append(x)
+  
+    def in2out(self):
+        while len(self.inqueue) > 0:
+            self.outqueue.append(self.inqueue.pop())
+
+
+    def pop(self) -> int:
+        if len(self.outqueue) == 0:
+            self.in2out()
+        return self.outqueue.pop()
+
+
+    def peek(self) -> int:
+        if len(self.outqueue) == 0:
+            self.in2out()
+        return self.outqueue[-1]
+
+    def empty(self) -> bool:
+        return len(self.inqueue) == 0 and len(self.outqueue) == 0
+
+
+
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
+```
+
+## leetcode239 滑动窗口最大值
+
+给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+
+返回 滑动窗口中的最大值 。
+
+示例1:
+
+```angular2html
+输入：nums = [1,3,-1,-3,5,3,6,7], k = 3
+输出：[3,3,5,5,6,7]
+解释：
+滑动窗口的位置                最大值
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+```
+
+### 思路
+
+对于每个滑动窗口，我们可以使用 O(k)的时间遍历其中的每一个元素，找出其中的最大值。对于长度为 nnn 的数组 nums而言，窗口的数量为 n−k+1，因此该算法的时间复杂度为 O((n−k+1)k)=O(nk)，会超出时间限制，因此我们需要进行一些优化。
+
+我们可以想到，对于两个相邻（只差了一个位置）的滑动窗口，它们共用着 k−1个元素，而只有1个元素是变化的。我们可以根据这个特点进行优化。
+
+对于「最大值」，我们可以想到一种非常合适的数据结构，那就是优先队列（堆），其中的大根堆可以帮助我们实时维护一系列元素中的最大值。
+
+对于本题而言，初始时，我们将数组 nums的前k个元素放入优先队列中。每当我们向右移动窗口时，我们就可以把一个新的元素放入优先队列中，此时堆顶的元素就是堆中所有元素的最大值。然而这个最大值可能并不在滑动窗口中，在这种情况下，这个值在数组 nums\textit{nums}nums 中的位置出现在滑动窗口左边界的左侧。因此，当我们后续继续向右移动窗口时，这个值就永远不可能出现在滑动窗口中了，我们可以将其永久地从优先队列中移除。
+
+我们不断地移除堆顶的元素，直到其确实出现在滑动窗口中。此时，堆顶元素就是滑动窗口中的最大值。为了方便判断堆顶元素与滑动窗口的位置关系，我们可以在优先队列中存储二元组 (num,index)，表示元素 num在数组中的下标为 index。
+
+### python(解法)
+
+```python
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        n = len(nums)
+        q = [(-nums[i],i) for i in range(k)]
+        heapq.heapify(q)
+
+        ans = [-q[0][0]]
+        for i in range(k,n):
+            heapq.heappush(q,(-nums[i], i))
+            while q[0][1] <= i -k:
+                heapq.heappop(q)
+            ans.append(-q[0][0])
+        return ans
+
+```
 
 # 参考文献
 
