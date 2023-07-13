@@ -1065,6 +1065,162 @@ class Solution:
 
 ```
 
+
+## leetcode 641. 设计循环双端队列
+设计实现双端队列。
+
+实现 MyCircularDeque 类:
+
+- MyCircularDeque(int k) ：构造函数,双端队列最大为 k 。
+- boolean insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true ，否则返回 false 。
+- boolean insertLast() ：将一个元素添加到双端队列尾部。如果操作成功返回 true ，否则返回 false 。
+- boolean deleteFront() ：从双端队列头部删除一个元素。 如果操作成功返回 true ，否则返回 false 。
+- boolean deleteLast() ：从双端队列尾部删除一个元素。如果操作成功返回 true ，否则返回 false 。
+- int getFront() )：从双端队列头部获得一个元素。如果双端队列为空，返回 -1 。
+- int getRear() ：获得双端队列的最后一个元素。 如果双端队列为空，返回 -1 。
+- boolean isEmpty() ：若双端队列为空，则返回 true ，否则返回 false  。
+- boolean isFull() ：若双端队列满了，则返回 true ，否则返回 false 。
+
+
+示例1:
+```angular2html
+输入
+["MyCircularDeque", "insertLast", "insertLast", "insertFront", "insertFront", "getRear", "isFull", "deleteLast", "insertFront", "getFront"]
+[[3], [1], [2], [3], [4], [], [], [], [4], []]
+输出
+[null, true, true, true, false, 2, true, true, true, 4]
+
+解释
+MyCircularDeque circularDeque = new MycircularDeque(3); // 设置容量大小为3
+circularDeque.insertLast(1);			        // 返回 true
+circularDeque.insertLast(2);			        // 返回 true
+circularDeque.insertFront(3);			        // 返回 true
+circularDeque.insertFront(4);			        // 已经满了，返回 false
+circularDeque.getRear();  				// 返回 2
+circularDeque.isFull();				        // 返回 true
+circularDeque.deleteLast();			        // 返回 true
+circularDeque.insertFront(4);			        // 返回 true
+circularDeque.getFront();				// 返回 4
+```
+
+### python(我的解法)
+```python
+class MyCircularDeque:
+
+    def __init__(self, k: int):
+        self.max_len = k
+        self.len = 0
+        self.queue = []
+
+
+    def insertFront(self, value: int) -> bool:
+        if self.len < self.max_len:
+            self.queue = [value] + self.queue
+            self.len += 1
+            return True
+        else:
+            return False
+
+
+
+    def insertLast(self, value: int) -> bool:
+        if self.len < self.max_len:
+            self.queue.append(value)
+            self.len += 1
+            return True
+        else:
+            return False
+
+
+    def deleteFront(self) -> bool:
+        if self.len > 0:
+            self.queue = self.queue[1:]
+            self.len -= 1
+            return True
+        return False
+
+
+    def deleteLast(self) -> bool:
+        if self.len > 0:
+            self.queue.pop()
+            self.len -= 1
+            return True
+        return False
+
+
+    def getFront(self) -> int:
+        if self.len >0:
+            return self.queue[0]
+        return -1
+
+
+    def getRear(self) -> int:
+        if self.len > 0:
+            return self.queue[-1]
+        return -1
+
+
+    def isEmpty(self) -> bool:
+        return self.len == 0
+
+
+    def isFull(self) -> bool:
+        return self.len == self.max_len
+
+
+
+# Your MyCircularDeque object will be instantiated and called as such:
+# obj = MyCircularDeque(k)
+# param_1 = obj.insertFront(value)
+# param_2 = obj.insertLast(value)
+# param_3 = obj.deleteFront()
+# param_4 = obj.deleteLast()
+# param_5 = obj.getFront()
+# param_6 = obj.getRear()
+# param_7 = obj.isEmpty()
+# param_8 = obj.isFull()
+```
+
+
+## leetcode203 移除链表元素
+给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+
+示例1:
+![img](./pic/203_removelinked-list.jpg)
+```angular2html
+输入：head = [1,2,6,3,4,5,6], val = 6
+输出：[1,2,3,4,5]
+```
+
+
+###python(我的解法)
+添加一个虚拟头结点，删除头结点就不用另做考虑
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        new_head = ListNode()
+        new_head.next = head
+        curr = new_head.next
+        prev = new_head
+        while curr:
+            if curr.val == val:
+                prev.next = curr.next
+            else:
+                prev = curr
+            curr = curr.next
+        return new_head.next
+
+```
+
+
+
+
+
 # 参考文献
 
 1. https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html
