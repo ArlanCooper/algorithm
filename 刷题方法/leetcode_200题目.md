@@ -184,7 +184,7 @@ class Solution:
                 l1 = l1.next
             else:
                 prev.next = l2
-                l2 = l2.next        
+                l2 = l2.next  
             prev = prev.next
 
         # 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
@@ -300,15 +300,15 @@ class Solution:
 算法流程：
 
 1. 双指针第一次相遇： 设两指针 fast，slow 指向链表头部 head，fast 每轮走 2 步，slow 每轮走 1 步；
-   
+
    a. 第一种结果： fast 指针走过链表末端，说明链表无环，直接返回 null；
-   
+
    ```
    - TIPS: 若有环，两指针一定会相遇。因为每走 111 轮，fast 与 slow 的间距 +1+1+1，fast 终会追上 slow；
    ```
-   
+
    b. 第二种结果： 当fast == slow时， 两指针在环中 第一次相遇 。下面分析此时fast 与 slow走过的 步数关系 ：
-   
+
    - 设链表共有 a+b个节点，其中 链表头部到链表入口 有 aaa 个节点（不计链表入口节点）， 链表环 有 bbb 个节点（这里需要注意，aaa 和 bbb 是未知数，例如图解上链表 a=4, b=5）；设两指针分别走了 f，s 步，则有：
    - a. fast 走的步数是slow步数的 222 倍，即 f=2s；（解析： fast 每轮走 2 步）
    - fast 比 slow多走了 n个环的长度，即 f=s+nb；（ 解析： 双指针都走过 aaa 步，然后在环内绕圈直到重合，重合时 fast 比 slow 多走 环的长度整数倍 ）；
@@ -380,7 +380,7 @@ class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         if left == right:
             return head
-      
+  
         i = 1
         prev = None
         curr = head
@@ -406,11 +406,11 @@ class Solution:
                     head = curr
                 new_curr.next = nex
                 break
-          
+    
             else:
                 prev = curr
                 curr = curr.next
-          
+    
             i += 1
         return head
 ```
@@ -1065,8 +1065,8 @@ class Solution:
 
 ```
 
-
 ## leetcode 641. 设计循环双端队列
+
 设计实现双端队列。
 
 实现 MyCircularDeque 类:
@@ -1081,8 +1081,8 @@ class Solution:
 - boolean isEmpty() ：若双端队列为空，则返回 true ，否则返回 false  。
 - boolean isFull() ：若双端队列满了，则返回 true ，否则返回 false 。
 
-
 示例1:
+
 ```angular2html
 输入
 ["MyCircularDeque", "insertLast", "insertLast", "insertFront", "insertFront", "getRear", "isFull", "deleteLast", "insertFront", "getFront"]
@@ -1104,6 +1104,7 @@ circularDeque.getFront();				// 返回 4
 ```
 
 ### python(我的解法)
+
 ```python
 class MyCircularDeque:
 
@@ -1181,20 +1182,21 @@ class MyCircularDeque:
 # param_8 = obj.isFull()
 ```
 
-
 ## leetcode203 移除链表元素
+
 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
 
 示例1:
 ![img](./pic/203_removelinked-list.jpg)
+
 ```angular2html
 输入：head = [1,2,6,3,4,5,6], val = 6
 输出：[1,2,3,4,5]
 ```
 
-
 ###python(我的解法)
 添加一个虚拟头结点，删除头结点就不用另做考虑
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -1217,8 +1219,23 @@ class Solution:
 
 ```
 
+### leetcode 25 K 个一组翻转链表
+
+给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。
+
+k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+
+你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+
+示例1:
+
+![img](./pic/25_leet.jpg)
 
 
+```angular2html
+输入：head = [1,2,3,4,5], k = 2
+输出：[2,1,4,3,5]
+```
 
 
 # 参考文献
@@ -1226,4 +1243,3 @@ class Solution:
 1. https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html
 2. https://github.com/itcharge/LeetCode-Py
 3. https://algo.itcharge.cn/03.Stack/01.Stack-Basic/01.Stack-Basic/
-
