@@ -1386,10 +1386,83 @@ class Solution:
 ```
 
 
+## 剑指 Offer 06. 从尾到头打印链表
+输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+
+示例1：
+```angular2html
+输入：head = [1,3,2]
+输出：[2,3,1]
+```
+
+###我的思路
+获取对应位置的元素，直接逆转即可
+
+###python（我的解法）
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        ans = []
+        while head:
+            ans.append(head.val)
+            head = head.next
+        return ans[::-1]
+```
 
 
+### 剑指 Offer 22. 链表中倒数第k个节点
+输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
+
+例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
+
+示例1:
+```angular2html
+给定一个链表: 1->2->3->4->5, 和 k = 2.
+
+返回链表 4->5.
+```
 
 
+### 思路
+先遍历一遍，记录长度；后面再遍历到n-k位置即可；
+
+###python (我的解法)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def getKthFromEnd(self, head: ListNode, k: int) -> ListNode:
+        n = 0
+        curr = head
+        while curr:
+            n += 1
+            curr = curr.next
+        for i in range(n-k):
+            head = head.next
+        return head
+```
+
+### 参考思路
+算法流程：
+初始化： 前指针 former 、后指针 latter ，双指针都指向头节点 head​ 。
+构建双指针距离： 前指针 former 先向前走 kkk 步（结束后，双指针 former 和 latter 间相距 kkk 步）。
+双指针共同移动： 循环中，双指针 former 和 latter 每轮都向前走一步，直至 former 走过链表 尾节点 时跳出（跳出后， latter 与尾节点距离为 k−1k-1k−1，即 latter 指向倒数第 kkk 个节点）。
+返回值： 返回 latter 即可。
+
+### python (参考代码)
+```python
+
+```
 
 
 
