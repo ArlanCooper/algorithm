@@ -406,11 +406,11 @@ class Solution:
                     head = curr
                 new_curr.next = nex
                 break
-    
+  
             else:
                 prev = curr
                 curr = curr.next
-    
+  
             i += 1
         return head
 ```
@@ -1229,13 +1229,73 @@ k 是一个正整数，它的值小于或等于链表的长度。如果节点总
 
 示例1:
 
-![img](./pic/25_leet.jpg)
-
+![img](./pic/reverse_ex1.jpg)
 
 ```angular2html
 输入：head = [1,2,3,4,5], k = 2
 输出：[2,1,4,3,5]
 ```
+
+### 思路
+
+一图胜千言，根据图片看代码，马上就懂了
+
+步骤分解:
+
+1. 链表分区为已翻转部分+待翻转部分+未翻转部分
+2. 每次翻转前，要确定翻转链表的范围，这个必须通过 k 此循环来确定
+3. 需记录翻转链表前驱和后继，方便翻转完成后把已翻转部分和未翻转部分连接起来
+4. 初始需要两个变量 pre 和 end，pre 代表待翻转链表的前驱，end 代表待翻转链表的末尾
+5. 经过k此循环，end 到达末尾，记录待翻转链表的后继 next = end.next
+6. 翻转链表，然后将三部分链表连接起来，然后重置 pre 和 end 指针，然后进入下一次循环
+7. 特殊情况，当翻转部分长度不足 k 时，在定位 end 完成后，end==null，已经到达末尾，说明题目已完成，直接返回即可
+8. 时间复杂度为 O(n∗K) 最好的情况为O(n)最差的情况未 O(n2)
+9. 空间复杂度为O(1)除了几个必须的节点指针外，我们并没有占用其他空间
+
+![img](./pic/25-k个一组翻转链表.png)
+
+###python(参考)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        dummy = ListNode()
+        dummy.next = head
+
+        pre = dummy
+        end = dummy
+
+        while end.next:
+            for i in range(k):
+                if end:
+                    end = end.next
+            if not end:
+                break
+            start = pre.next
+            nex = end.next
+            end.next = None
+            pre.next = self.reverse_list(start)
+            start.next = nex
+            pre = start
+
+            end = pre
+        return dummy.next
+    def reverse_list(self, head):
+        pre = None
+        curr = head
+        while curr:
+            nex = curr.next
+            curr.next = pre
+            pre = curr
+            curr = nex
+        return pre
+```
+
+
 
 
 # 参考文献
