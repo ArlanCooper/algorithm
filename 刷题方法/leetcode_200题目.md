@@ -1297,6 +1297,103 @@ class Solution:
 ```
 
 
+### 234. 回文链表
+给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。
+
+示例1:
+```angular2html
+输入：head = [1,2,2,1]
+输出：true
+```
+
+
+### 思路
+将值复制到数组中后用双指针法
+一共为两个步骤：
+
+复制链表值到数组列表中。
+使用双指针法判断是否为回文。
+第一步，我们需要遍历链表将值复制到数组列表中。我们用 currentNode 指向当前节点。每次迭代向数组添加 currentNode.val，并更新 currentNode = currentNode.next，当 currentNode = null 时停止循环。
+执行第二步的最佳方法取决于你使用的语言。在 Python 中，很容易构造一个列表的反向副本，也很容易比较两个列表。而在其他语言中，就没有那么简单。因此最好使用双指针法来检查是否为回文。我们在起点放置一个指针，在结尾放置一个指针，每一次迭代判断两个指针指向的元素是否相同，若不同，返回 false；相同则将两个指针向内移动，并继续判断，直到两个指针相遇。
+
+### python (参考代码)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        curr = head
+        vals = []
+        while curr:
+            vals.append(curr.val)
+            curr = curr.next
+        return vals ==vals[::-1]
+```
+
+## leetcode 328 奇偶链表
+给定单链表的头节点 head ，将所有索引为奇数的节点和索引为偶数的节点分别组合在一起，然后返回重新排序的列表。
+
+第一个节点的索引被认为是 奇数 ， 第二个节点的索引为 偶数 ，以此类推。
+
+请注意，偶数组和奇数组内部的相对顺序应该与输入时保持一致。
+
+你必须在 O(1) 的额外空间复杂度和 O(n) 的时间复杂度下解决这个问题。
+
+![img](./pic/328_oddeven-linked-list.jpg)
+```angular2html
+输入: head = [1,2,3,4,5]
+输出: [1,3,5,2,4]
+```
+
+
+### 我的思路
+分为两份，分别计算奇数头，以及偶数头，然后把偶数头拼接到奇数末尾即可。
+
+### python(我的解法)
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+        
+        dummy = ListNode()
+        dummy.next = head
+        curr = head
+        first = dummy
+        second = ListNode()
+        second_init = second
+        flag = 0
+        while curr:
+            if flag % 2 == 0:
+                first.next = curr
+                first = first.next
+            else:
+                second.next = curr
+                second = second.next
+            flag += 1
+            curr = curr.next
+        second.next = None #这一步一定要加，否则就是无限循环下下去了
+        first.next = second_init.next
+        return dummy.next
+```
+
+
+
+
+
+
+
+
+
+
 # 参考文献
 
 1. https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html
