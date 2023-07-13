@@ -1255,6 +1255,7 @@ k 是一个正整数，它的值小于或等于链表的长度。如果节点总
 ![img](./pic/25-k个一组翻转链表.png)
 
 ###python(参考)
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -1294,8 +1295,6 @@ class Solution:
             curr = nex
         return pre
 ```
-
-
 
 
 # 参考文献
