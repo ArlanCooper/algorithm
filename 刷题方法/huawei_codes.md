@@ -447,6 +447,131 @@ while True:
 
 
 
+### NC37 合并区间
+描述
+给出一组区间，请合并所有重叠的区间。
+请保证合并后的区间按区间起点升序排列。
+数据范围：区间组数 0≤n≤2×10^5 ，区间内 的值都满足 0≤val≤2×10^5
+要求：空间复杂度 O(n)，时间复杂度 O(nlogn)
+进阶：空间复杂度 O(val)，时间复杂度 O(val)
 
+
+```python
+# class Interval:
+#     def __init__(self, a=0, b=0):
+#         self.start = a
+#         self.end = b
+#
+# 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+#
+# 
+# @param intervals Interval类一维数组 
+# @return Interval类一维数组
+#
+class Solution:
+    def merge(self , intervals: List[Interval]) -> List[Interval]:
+        # write code here
+        n = len(intervals)
+        if n <= 1:
+            return intervals
+        intervals.sort(key = lambda x:x.start)
+        ans = [intervals[0]]
+        i = 1
+        while i < n:
+            former = ans[-1]
+            while i < n and former.end >= intervals[i].start:
+                former.end = max(intervals[i].end,former.end)
+                i += 1
+            if former.end != ans[-1].end:
+                ans[-1].end = former.end
+            else:
+                if i >= n:
+                    break
+                ans.append(intervals[i])
+            i += 1
+        return ans
+```
+
+参考解法
+```python
+from functools import cmp_to_key
+
+class Solution:
+    def merge(self , intervals: List[Interval]) -> List[Interval]:
+        res = list()
+        #去除特殊情况
+        if len(intervals) == 0: 
+            return res
+        #按照区间首排序
+        intervals.sort(key=cmp_to_key(lambda a,b:a.start - b.start))
+        #放入第一个区间
+        res.append(intervals[0]) 
+        #遍历后续区间，查看是否与末尾有重叠
+        for i in range(len(intervals)): 
+            #区间有重叠，更新结尾
+            if intervals[i].start <= res[-1].end: 
+                res[-1].end = max(res[-1].end, intervals[i].end)
+            #区间没有重叠，直接加入
+            else: 
+                res.append(intervals[i])
+        return res
+```
+
+
+### HJ68 成绩排序
+描述
+给定一些同学的信息（名字，成绩）序列，请你将他们的信息按照成绩从高到低或从低到高的排列,相同成绩
+
+都按先录入排列在前的规则处理。
+
+例示：
+jack      70
+peter     96
+Tom       70
+smith     67
+
+从高到低  成绩
+peter     96
+jack      70
+Tom       70
+smith     67
+
+从低到高
+
+smith     67
+
+jack      70
+
+Tom       70
+peter     96
+
+注：0代表从高到低，1代表从低到高
+
+
+```python
+
+while True:
+    try:
+
+        n = int(input())
+        nk = input() #排序顺序
+        ans = []
+        for i in range(n):
+            name,score = input().split()
+            ans.append([name, int(score)])
+        ans = [[i,j,k] for i,(j,k) in enumerate(ans)]
+        if nk == '1':
+            ans.sort(key= lambda x: (x[2], x[0]))
+        else:
+            ans.sort(key= lambda x: (x[2], -x[0]),reverse=True)
+        for i,j,k in ans:
+            print(j,str(k))
+            
+
+
+    
+    except Exception as e:
+        break
+```
 
 
