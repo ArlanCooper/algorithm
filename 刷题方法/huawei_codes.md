@@ -526,14 +526,20 @@ class Solution:
 
 例示：
 jack      70
+
 peter     96
+
 Tom       70
+
 smith     67
 
 从高到低  成绩
 peter     96
+
 jack      70
+
 Tom       70
+
 smith     67
 
 从低到高
@@ -543,16 +549,15 @@ smith     67
 jack      70
 
 Tom       70
+
 peter     96
 
 注：0代表从高到低，1代表从低到高
-
 
 ```python
 
 while True:
     try:
-
         n = int(input())
         nk = input() #排序顺序
         ans = []
@@ -566,12 +571,84 @@ while True:
             ans.sort(key= lambda x: (x[2], -x[0]),reverse=True)
         for i,j,k in ans:
             print(j,str(k))
-            
 
-
-    
     except Exception as e:
         break
 ```
+参考:
+```python
+while True:
+    try:
+        n, order = int(input()), int(input())
+        data = [] # 不能用字典保存，因为可能有名字是重复的
+        for _ in range(n):
+            name, score = input().split()
+            data.append((name, int(score)))
+        if order:
+            for i in sorted(data, key=lambda x:x[1]): # 升序
+                print(i[0], i[1])
+        else:
+            for i in sorted(data, key=lambda x:x[1], reverse=True): # 降序
+                print(i[0], i[1])
+    except:
+        break
+```
+  
+
+### NC52 有效括号序列
+描述
+给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列
+括号必须以正确的顺序关闭，"()"和"()[]{}"都是合法的括号序列，但"(]"和"([)]"不合法。
+
+数据范围：字符串长度 0≤n≤10000
+要求：空间复杂度 O(n)，时间复杂度 O(n)
 
 
+```python
+#
+# 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+#
+# 
+# @param s string字符串 
+# @return bool布尔型
+#
+class Solution:
+    def isValid(self , s: str) -> bool:
+        # write code here
+        dics ={'(':')','[':']','{':'}','?':'?'}
+        stack = ['?']
+        for i in s:
+            if i in dics:
+                stack.append(i)
+            else:
+                if dics[stack.pop()] != i:
+                    return False
+        return len(stack) == 1
+
+```
+
+
+### leetcode 1614. 括号的最大嵌套深度
+如果字符串满足以下条件之一，则可以称之为 有效括号字符串（valid parentheses string，可以简写为 VPS）：
+
+字符串是一个空字符串 ""，或者是一个不为 "(" 或 ")" 的单字符。
+字符串可以写为 AB（A 与 B 字符串连接），其中 A 和 B 都是 有效括号字符串 。
+字符串可以写为 (A)，其中 A 是一个 有效括号字符串 。
+类似地，可以定义任何有效括号字符串 S 的 嵌套深度 depth(S)：
+
+depth("") = 0
+depth(C) = 0，其中 C 是单个字符的字符串，且该字符不是 "(" 或者 ")"
+depth(A + B) = max(depth(A), depth(B))，其中 A 和 B 都是 有效括号字符串
+depth("(" + A + ")") = 1 + depth(A)，其中 A 是一个 有效括号字符串
+例如：""、"()()"、"()(()())" 都是 有效括号字符串（嵌套深度分别为 0、1、2），而 ")(" 、"(()" 都不是 有效括号字符串 。
+
+给你一个 有效括号字符串 s，返回该字符串的 s 嵌套深度 。
+
+示例1:
+```angular2html
+输入：s = "(1+(2*3)+((8)/4))+1"
+输出：3
+解释：数字 8 在嵌套的 3 层括号中。
+```
+
+###

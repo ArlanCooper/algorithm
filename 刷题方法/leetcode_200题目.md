@@ -551,7 +551,7 @@ class Solution:
 
 栈先入后出特点恰好与本题括号排序特点一致，即若遇到左括号入栈，遇到右括号时将对应栈顶左括号出栈，则遍历完所有括号后 stack 仍然为空；
 
-建立哈希表 dic 构建左右括号对应关系：keykeykey 左括号，valuevaluevalue 右括号；这样查询 222 个括号是否对应只需 O(1)O(1)O(1) 时间复杂度；建立栈 stack，遍历字符串 s 并按照算法流程一一判断。
+建立哈希表 dic 构建左右括号对应关系：key 左括号, value 右括号；这样查询 222 个括号是否对应只需 O(1)O(1)O(1) 时间复杂度；建立栈 stack，遍历字符串 s 并按照算法流程一一判断。
 
 ### python（参考解法）
 
@@ -566,7 +566,7 @@ class Solution:
             else:
                 if dic[stack.pop()] != i:
                     return False
-        return True
+        return len(stack) == 1
 ```
 
 ## leetcode 224 基本计算器
