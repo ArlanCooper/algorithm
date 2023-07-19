@@ -651,4 +651,200 @@ depth("(" + A + ")") = 1 + depth(A)，其中 A 是一个 有效括号字符串
 解释：数字 8 在嵌套的 3 层括号中。
 ```
 
-###
+### 面试题 08.08. 有重复字符串的排列组合
+有重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合。
+示例1:
+```angular2html
+ 输入：S = "qqe"
+ 输出：["eqq","qeq","qqe"]
+```
+
+解题:
+```python
+class Solution:
+    def permutation(self, S: str) -> List[str]:
+        ans = []
+        path = []
+        stack = sorted(S)
+        n = len(S)
+
+        def trace():
+            if len(path) == n:
+                ans.append(''.join(path))
+            
+            for i in range(n):
+                if stack[i] is None or (i >0 and stack[i] == stack[i-1]):
+                    continue
+                tmp = stack[i]
+                stack[i] = None
+                path.append(tmp)
+                trace()
+                path.pop()
+                stack[i] = tmp
+        
+        trace()
+        return ans
+            
+```
+
+### leetcode 77. 组合
+给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。
+
+你可以按 任何顺序 返回答案。
+
+
+```python
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        ans = []
+        path = []
+        def dfs(i):
+            d = k - len(path)
+
+            if d == 0:
+                ans.append(path.copy())
+                return
+            for j in range(i,d-1,-1):
+                path.append(j)
+                dfs(j-1)
+                path.pop()
+        
+        dfs(n)
+
+        return ans
+```
+
+
+## 双指针
+### leetcode 674. 最长连续递增序列
+给定一个未经排序的整数数组，找到最长且 连续递增的子序列，并返回该序列的长度。
+
+连续递增的子序列 可以由两个下标 l 和 r（l < r）确定，如果对于每个 l <= i < r，都有 nums[i] < nums[i + 1] ，那么子序列 [nums[l], nums[l + 1], ..., nums[r - 1], nums[r]] 就是连续递增子序列。
+
+示例1:
+```angular2html
+输入：nums = [1,3,5,4,7]
+输出：3
+解释：最长连续递增序列是 [1,3,5], 长度为3。
+尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。 
+```
+我的解法
+```python
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n <= 1:
+            return n
+        ans = 1
+        l,r = 0,1
+        while r < n:
+            while r< n and nums[r] > nums[l] and nums[r] > nums[r-1]:
+                ans = max(ans,r-l+1)
+                r += 1
+            l,r = r, r+1
+        return ans
+```
+
+参考
+```python
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n <= 1:
+            return n
+        ans = 0
+        start = 0
+        for i in range(n):
+            if i > 0 and nums[i] <= nums[i-1]:
+                start = i
+            ans = max(ans, i - start + 1)
+        return ans
+            
+```
+
+### NC17.最长回文子串
+描述
+对于长度为n的一个字符串A（仅包含数字，大小写英文字母），请设计一个高效算法，计算其中最长回文子串的长度。
+
+
+```python
+class Solution:
+    def getLongestPalindrome(self , A: str) -> int:
+        # write code here
+        res = ''
+        for i in range(len(A)):
+            start = max(i-len(res)-1,0)
+            tmp = A[start:i+1]
+            if tmp == tmp[::-1]:
+                res = tmp
+            else:
+                tmp = tmp[1:]
+                if tmp == tmp[::-1]:
+                    res = tmp
+        return len(res)
+```
+
+## 深搜
+### HJ41 称砝码
+现有n种砝码，重量互不相等，分别为 m1,m2,m3…mn ；
+每种砝码对应的数量为 x1,x2,x3...xn 。现在要用这些砝码去称物体的重量(放在同一侧)，问能称出多少种不同的重量。
+
+注：
+
+称重重量包括 0
+
+
+```python
+while True:
+
+    try:
+        n = int(input())
+        m = list([int(i) for i in input().split()])
+        x = list([int(i) for i in input().split()])
+        weight_list = [0]
+        for i in range(n):
+            tmp = [m[i]*j for j in range(x[i]+1)]
+            weight_list = list(set(a+b for a in tmp for b in weight_list))
+        print(len(weight_list))
+
+
+    except:
+        break
+```
+
+## 二叉树
+### 剑指 Offer 32 - I. 从上到下打印二叉树
+从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
+        
+        res, queue = [],collections.deque()
+        queue.append(root)
+        while queue:
+            node = queue.popleft()
+            res.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        return res
+
+```
+
+
+
+
+
+# 参考
+1. https://www.nowcoder.com/exam/oj?page=1&pageSize=50&search=NC17&tab=%E7%AE%97%E6%B3%95%E7%AF%87&topicId=196
