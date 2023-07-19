@@ -842,6 +842,62 @@ class Solution:
 
 ```
 
+## 其他
+### HJ108 求最小公倍数
+正整数A和正整数B 的最小公倍数是指 能被A和B整除的最小的正整数值，设计一个算法，求输入A和B的最小公倍数。
+```python
+while True:
+    try:
+        a,b = [int(i) for i in input().split()]
+        if b > a:
+            a,b = b,a
+        if a % b == 0:
+            print(a)
+        else:          
+            for i in range(1,b+1):
+                if i*a % b == 0:
+                    print(i*a)
+                    break
+
+
+    except:
+        break
+```
+
+
+
+### HJ60 查找组成一个偶数最接近的两个素数
+描述
+任意一个偶数（大于2）都可以由2个素数组成，组成偶数的2个素数有很多种情况，本题目要求输出组成指定偶数的两个素数差值最小的素数对。
+
+
+```python
+import math
+def is_prime(num):
+    for i in range(2,int(math.sqrt(num))+1):
+        if num % i == 0:
+            return False
+    return True
+
+
+while True:
+    try:
+        n = int(input())
+        k = n // 2
+        if k %2 == 0 and k != 2:
+            k -= 1
+        for i in range(k,1,-2):
+            if is_prime(i) and is_prime(n-i):
+                print(i)
+                print(n-i)
+                break
+
+
+
+
+    except:
+        break
+```
 
 
 
